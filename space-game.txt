@@ -18,7 +18,24 @@ While on planet such as earth, be able to buy and sell, and travel
 	distance is inmportant because of time and fuel
 	start game at 18yo, game ends at 62yo (or sooner for other reasons)
 	speed- warp units
+	Inventory
+	Each planet should have a unique good
 
 	Distance = Speed * Time
 
 	Time = Speed / Distance
+
+Stretch goals
+	Upgradeable ships
+	Speed-based fuel consumption
+	Mini-games
+	Space Piracey
+	Variable economy
+
+Design
+
+Data- Fuel & Ship, Planet Locations & Resources, User Info, Inventory, Price of goods(range)
+
+Code- Warp equation, Story, Distance = Speed * Time, UI, Minigames, Random event generator
+
+UI- Speed, Purchasing choices, Travel
