@@ -1,0 +1,15 @@
+Collaborators: Garry Peffer, Sam Segars
+
+We will utilizing a 'bottom-up' method, starting with basic functionality and adding features as we go
+
+GitHub repository owned by Garry Peffer, shared with Same Segars
+
+We will communicate as to which directories are being worked on currently to mitigate conflicts.
+
+Any conflicts that do occur will be handled as they come, with reference to most recent update and collarbation for ideal implementation.
+
+Each player will start with 1000 units (currency)
+
+Separate module for each element imported into main-game file
+
+Basic starting user-interface
