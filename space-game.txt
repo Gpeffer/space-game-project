@@ -1,0 +1,24 @@
+Start in spaceship
+
+Travel to make a profit
+
+Purchase and sell
+
+Start on earth with spaceship and small amount of money
+
+While on planet such as earth, be able to buy and sell, and travel
+
+"Flat universe"
+	Compelling story (Beginning, middle, end) Good ending, or bad ending
+	Earth is (0,0)
+	at least two additional planets
+	at least one planet is Alpha Proxima (0,-4.246)
+	at least one random location, not known until program runs
+
+	distance is inmportant because of time and fuel
+	start game at 18yo, game ends at 62yo (or sooner for other reasons)
+	speed- warp units
+
+	Distance = Speed * Time
+
+	Time = Speed / Distance
