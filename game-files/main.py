@@ -19,6 +19,7 @@ def Main_loop():
         answer = input() 
         if answer == "t":
             os.system("clear")
+            
         if answer == "m":
             os.system("clear")
             market.market("earth")
