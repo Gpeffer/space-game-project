@@ -2,16 +2,18 @@ from planets import earth
 from planets import *
 import math
 
+far_away = [float(-10), float(-10)]
+far_away1 = [float(10), float(10)]
 starting_location = earth
 current_location = starting_location
 random_planet = random_location()
-destination = random_planet
+#destination = random_planet()
 
 def distance():
-    a = current_location[0]
-    b = current_location[1]
-    c = destination[0]
-    d = destination[1]
+    a = far_away[0] 
+    b = far_away[1]
+    c = far_away1[0]
+    d = far_away1[1]
     a -= c
     b -= d
     a = a**2
@@ -35,8 +37,35 @@ def warp_speed():
             b = c**b
             a += b
             a = round(a)
-            return a
+            s = a
+            return s
         else:
             print('\nInvalid input\n')
 
-print(warp_speed())
+def distance_convert():
+    a = distance()
+    a *= 20
+    d = a
+    d = round(d)
+    return d
+
+def time():
+    d = distance_convert()
+    s = warp_speed()
+    t = d / s
+    t = round(t, 3)
+    return t
+
+def fuel():
+    s = warp_speed()
+    a = distance()
+    s /= 30
+    f = s * a
+    f = round(f, 3)
+    return f
+
+#print(distance())
+#print(str('Fuel used: ')):w
+#print(time())
+#print(fuel())
+#print(warp_speed())
