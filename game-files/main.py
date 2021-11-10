@@ -1,25 +1,32 @@
 import ship 
 import planets
 import userinfo
+import os
+import market
 def Not_yet():
     print("This has not yet been created or linked")
 def Main_loop():
     answer = 0
     while answer != "q":
-        units = userinfo.unitget(1)
+        os.system("clear")
+        units = userinfo.units
         print("Units:" + str(units))
         print("Location:")
         print("What would you like to do?\n"
-             + "t for Travel\n"
-             +  "m for Market\n"
-             +  "i for Inventory")   
+             + "t for Travel                m for Market\n"
+             + "i for Inventory             q for Quit Game\n"
+             + "Choice?  ", end = "")
         answer = input() 
         if answer == "t":
-            Not_yet()
+            os.system("clear")
         if answer == "m":
-            Not_yet()
+            os.system("clear")
+            market.market("earth")
         if answer == "i":
-            Not_yet()
+            os.system("clear")
+            print(userinfo.inventoryget(), end = "")
+            print("Enter Any Key To Exit")
+            input()
 
 
 Main_loop()
