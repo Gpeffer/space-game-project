@@ -17,6 +17,4 @@ def random_location():
     c = [float(a), float(b)]
     return c
 
-random_planet_location = random_location()
-
-print(random_planet_location)
+print(random_location())
