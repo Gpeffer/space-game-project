@@ -10,10 +10,10 @@ random_planet = random_location()
 #destination = random_planet()
 
 def distance():
-    a = far_away[0] 
-    b = far_away[1]
-    c = far_away1[0]
-    d = far_away1[1]
+    a = current_location[0] 
+    b = current_location[1]
+    c = destination[0]
+    d = destination[1]
     a -= c
     b -= d
     a = a**2
@@ -65,7 +65,6 @@ def fuel():
     return f
 
 #print(distance())
-#print(str('Fuel used: ')):w
 #print(time())
 #print(fuel())
 #print(warp_speed())
