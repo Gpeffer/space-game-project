@@ -2,19 +2,21 @@ import stdrandom
 
 # basic coordinates- Earth(0,0) Alpha Aproxima(0,-4.246) Random planet(a,b)
 
-# define variable
+# define variables
 
-starting_location = earth
-earth_location = float([0,0])
-alpha_aproxima_location = float([0,-4.246])
+earth_location = "[float(0), float(0)]"
+alpha_aproxima_location = "[float(0), float(-4.246)]"
 
 # define functions
 
 def random_location():
     a = stdrandom.uniformFloat(-10,10)
     b = stdrandom.uniformFloat(-10,10)
-    random_location = [a,b]
-    return random_location
+    a = round(a, 3)
+    b = round(b, 3)
+    c = [float(a), float(b)]
+    return c
 
-def current_location():
-    return
+random_planet_location = random_location()
+
+print(random_planet_location)
