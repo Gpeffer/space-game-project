@@ -21,6 +21,22 @@ def distance():
     a = round(a, 3)
     return a
 
-print(starting_location)
-print(destination)
-print(distance())
+def warp_speed():
+    a = ()
+    while a == ():
+        W = input('Input integer 1-8 (higher number = faster travel and fuel consumed at higher rate)\n> ')
+        W = int(W)
+        if W <= 8 and W >= 1:
+            W = float(W)
+            a = float(10) / float(3)
+            a = W**a
+            b = float(-11) / float(3)
+            c = float(10) - W
+            b = c**b
+            a += b
+            a = round(a)
+            return a
+        else:
+            print('\nInvalid input\n')
+
+print(warp_speed())
