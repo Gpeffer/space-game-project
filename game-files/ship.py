@@ -1,13 +1,44 @@
-from planets import earth
 from planets import *
 import math
 
-far_away = [float(-10), float(-10)]
-far_away1 = [float(10), float(10)]
-starting_location = earth
-current_location = starting_location
-random_planet = random_location()
-#destination = random_planet()
+earth_name = str('Earth')
+random_planet_name = str('Random Planet')
+alpha_name = str('Alpha Aproxima')
+
+earth_info = [earth_name, earth_location]
+alpha_info = [alpha_name, alpha_location]
+random_planet_info = [random_planet_name, random_planet_location]
+
+starting_location_name = earth_name
+starting_location = earth_location
+current_location_name = starting_location_name
+current_location = earth_location #starting_location
+
+starting_fuel = 100.0
+current_fuel = starting_fuel
+available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
+available_areas_locations = [earth_location, alpha_location, random_planet_location]
+destination = alpha_location
+
+def travel_ui():
+    n = 0
+    global current_fuel
+    available_areas_names.remove(current_location_name)
+    available_areas_locations.remove(current_location)
+    current_fuel = str(current_fuel)
+    print('Travel Menu\n')
+    print(str('Current location: ') + (current_location_name))
+    print(str('Current fuel level: ') + (current_fuel) + str(' gal\n'))
+    print('Planets available to travel to: ')
+    for i in available_areas_names:
+        n += 1
+        print(str(n) + '. ' + i + ' ')
+    destination = input('\nSelect number of planet to travel to:\n> ')
+    destination = available_areas_names[int(destination) -1]
+    return destination
+
+#def current_location():
+#    current_location = destination
 
 def distance():
     a = current_location[0] 
@@ -68,3 +99,5 @@ def fuel():
 #print(time())
 #print(fuel())
 #print(warp_speed())
+#print(earth_info)
+print(travel_ui())

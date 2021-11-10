@@ -1,11 +1,6 @@
+# import modules
+
 import stdrandom
-
-# basic coordinates- Earth(0,0) Alpha Aproxima(0,-4.246) Random planet(a,b)
-
-# define variables
-
-earth = [float(0.0), float(0.0)]
-alpha_aproxima = [float(0), float(-4.246)]
 
 # define functions
 
@@ -16,3 +11,9 @@ def random_location():
     b = round(b, 3)
     c = [float(a), float(b)]
     return c
+
+# define variables
+
+earth_location = [float(0.0), float(0.0)]
+alpha_location = [float(0), float(-4.246)]
+random_planet_location = random_location()
