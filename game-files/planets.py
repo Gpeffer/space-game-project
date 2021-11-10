@@ -4,8 +4,8 @@ import stdrandom
 
 # define variables
 
-earth_location = "[float(0), float(0)]"
-alpha_aproxima_location = "[float(0), float(-4.246)]"
+earth = [float(0.0), float(0.0)]
+alpha_aproxima = [float(0), float(-4.246)]
 
 # define functions
 
@@ -16,5 +16,3 @@ def random_location():
     b = round(b, 3)
     c = [float(a), float(b)]
     return c
-
-print(random_location())
