@@ -29,7 +29,7 @@ available_areas = [available_areas_names, available_areas_locations]
 #def current_location():
 #    current_location = destination
 
-def distance(destination):
+def distance1(destination):
     a = current_location[0] 
     b = current_location[1]
     c = destination[0]
@@ -98,6 +98,8 @@ def travel_ui():
     global distance
     global current_location_name
     global available_areas_locations
+    global available_areas_names
+    global available_areas
     os.system("clear")
     k = 0
     global current_fuel
@@ -130,7 +132,7 @@ def travel_ui():
                     if 'destination' in locals():
                         del destination
                     destination = available_areas_locations[0]
-                    distance = (distance(destination))
+                    distance = distance1(destination)
                     print('This is ', distance, ' units away.')
                     speed = warp_speed()
                     dist_con = distance_convert(distance)
@@ -145,6 +147,9 @@ def travel_ui():
                         current_fuel -= fuel_used
                         current_location_name = destination
                         current_location = available_areas_locations[0]
+                        available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
+                        available_areas_locations = [earth_location, alpha_location, random_planet_location]
+                        available_areas = [available_areas_names, available_areas_locations]
                         return current_fuel, current_location_name
                         l += 1
                     else:
@@ -153,7 +158,7 @@ def travel_ui():
                     os.system("clear")
                     print('\nYou have selected ' + destination + '...\n')
                     destination = available_areas_locations[1]
-                    distance = distance(destination)
+                    distance = distance1(destination)
                     print('This is ', distance, ' units away.')
                     speed = warp_speed()
                     dist_con = distance_convert(distance)
@@ -169,6 +174,9 @@ def travel_ui():
                         current_fuel -= fuel_used
                         current_location_name = destination
                         current_location = available_locations_areas[1]
+                        available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
+                        available_areas_locations = [earth_location, alpha_location, random_planet_location]
+                        available_areas = [available_areas_names, available_areas_locations]
                         return current_fuel, current_location_name
                         l += 1
                     else:
@@ -176,10 +184,11 @@ def travel_ui():
             else:
                 print('Invalid input')
                 l = 0
+    
         
 #print(distance())
 #print(time())
 #print(fuel())
 #print(warp_speed())
 #print(earth_info)
-print(travel_ui())
+#print(travel_ui())
