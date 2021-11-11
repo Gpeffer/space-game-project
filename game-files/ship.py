@@ -123,7 +123,26 @@ def travel_ui():
             destination = available_areas_names[0]
             current_fuel -= fuel_used
             current_location_name = destination
-#            player_age += time_used
+            return current_fuel, current_location_name
+    if destination == available_areas_names[1]:
+        os.system("clear")
+        print('\nYou have selected ' + destination + '...\n')
+        destination = available_areas_locations[1]
+        distance = distance(destination)
+        print('This is ', distance, ' units away.')
+        speed = warp_speed()
+        dist_con = distance_convert(distance)
+        time_used = time(speed,dist_con)
+        fuel_used = fuel(speed,distance)
+        print('Years to travel: ', time_used, 'years', '\nFuel to be used: ', fuel_used, 'gal')
+        travel = input('\nDo you want to travel? (Y)es, (N)o\n> ')
+        if travel == 'y' or travel == 'Y':
+            current_fuel = float(current_fuel)
+            current_fuel = round(current_fuel, 3)
+            fuel_used = float(fuel_used)
+            destination = available_areas_names[1]
+            current_fuel -= fuel_used
+            current_location_name = destination
             return current_fuel, current_location_name
         
 
