@@ -94,6 +94,7 @@ def fuel(speed, distance):
     return f
 
 def travel_ui():
+    global current_location
     global distance
     global current_location_name
     global available_areas_locations
@@ -105,12 +106,7 @@ def travel_ui():
     current_fuel = str(current_fuel)
     while k == 0:
         l = 0
-
         while l == 0:
-            if 'destination' in locals():
-                del destination
-            if 'distance' in locals():
-                del distance
             n = 0
             os.system("clear")
             print('Travel Menu\n')
@@ -128,6 +124,9 @@ def travel_ui():
             elif destination == '1' or destination == '2':
                 destination = int(destination)
                 destination = available_areas_names[int(destination) -1]
+
+
+
                 if destination == available_areas_names[0]:
                     os.system("clear")
                     print('\nYou have selected ' + destination + '...\n')
@@ -146,6 +145,7 @@ def travel_ui():
                         destination = available_areas_names[0]
                         current_fuel -= fuel_used
                         current_location_name = destination
+                        current_location = available_areas_locations[0]
                         return current_fuel, current_location_name
                         l += 1
                     else:
@@ -169,6 +169,7 @@ def travel_ui():
                         destination = available_areas_names[1]
                         current_fuel -= fuel_used
                         current_location_name = destination
+                        current_location = available_locations_areas[1]
                         return current_fuel, current_location_name
                         l += 1
                     else:
@@ -176,8 +177,6 @@ def travel_ui():
             else:
                 print('Invalid input')
                 l = 0
-#                else:
-#                    k += 1
         
 #print(distance())
 #print(time())
