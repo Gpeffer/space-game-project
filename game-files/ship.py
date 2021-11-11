@@ -41,6 +41,7 @@ def distance(destination):
     a += b
     a = math.sqrt(a)
     a = round(a, 3)
+    a = str(a)
     return a
 
 def warp_speed():
@@ -65,11 +66,16 @@ def warp_speed():
             print('\nInvalid input\n')
 
 def distance_convert(distance):
+    distance = float(distance)
     a = distance
     a *= 20
     d = a
     d = round(d)
+#    d = str(d)
+    d = float(d)
     return d
+    if 'd' in locals():
+        del d
 
 def time(speed, dist_con):
     d = dist_con
@@ -80,6 +86,7 @@ def time(speed, dist_con):
 
 def fuel(speed, distance):
     s = speed
+    distance = float(distance)
     a = distance
     s /= 30
     f = s * a
@@ -93,12 +100,17 @@ def travel_ui():
     os.system("clear")
     k = 0
     global current_fuel
+    available_areas_names.remove(current_location_name)
+    available_areas_locations.remove(current_location)
+    current_fuel = str(current_fuel)
     while k == 0:
         l = 0
-        available_areas_names.remove(current_location_name)
-        available_areas_locations.remove(current_location)
-        current_fuel = str(current_fuel)
+
         while l == 0:
+            if 'destination' in locals():
+                del destination
+            if 'distance' in locals():
+                del distance
             n = 0
             os.system("clear")
             print('Travel Menu\n')
@@ -120,7 +132,7 @@ def travel_ui():
                     os.system("clear")
                     print('\nYou have selected ' + destination + '...\n')
                     destination = available_areas_locations[0]
-                    distance = distance(destination)
+                    distance = (distance(destination))
                     print('This is ', distance, ' units away.')
                     speed = warp_speed()
                     dist_con = distance_convert(distance)
@@ -137,7 +149,7 @@ def travel_ui():
                         return current_fuel, current_location_name
                         l += 1
                     else:
-                        l = 0
+                        l = 1
                 if destination == available_areas_names[1]:
                     os.system("clear")
                     print('\nYou have selected ' + destination + '...\n')
@@ -160,7 +172,7 @@ def travel_ui():
                         return current_fuel, current_location_name
                         l += 1
                     else:
-                        l = 0
+                        l = 1
             else:
                 print('Invalid input')
                 l = 0
