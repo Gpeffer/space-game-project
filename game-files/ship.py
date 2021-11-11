@@ -30,7 +30,6 @@ available_areas = [available_areas_names, available_areas_locations]
 #    current_location = destination
 
 def distance(destination):
-#    global destination
     a = current_location[0] 
     b = current_location[1]
     c = destination[0]
@@ -90,62 +89,87 @@ def fuel(speed, distance):
 def travel_ui():
     global distance
     global current_location_name
+    global available_areas_locations
     os.system("clear")
-    n = 0
+    k = 0
     global current_fuel
-    available_areas_names.remove(current_location_name)
-    available_areas_locations.remove(current_location)
-    current_fuel = str(current_fuel)
-    print('Travel Menu\n')
-    print(str('Current location: ') + (current_location_name))
-    print(str('Current fuel level: ') + (current_fuel) + str(' gal\n'))
-    print('Planets available to travel to: ')
-    for i in available_areas_names:
-        n += 1
-        print(str(n) + '. ' + i)
-    destination = input('\nSelect number of planet to travel to:\n> ')
-    destination = available_areas_names[int(destination) -1]
-    if destination == available_areas_names[0]:
-        os.system("clear")
-        print('\nYou have selected ' + destination + '...\n')
-        destination = available_areas_locations[0]
-        distance = distance(destination)
-        print('This is ', distance, ' units away.')
-        speed = warp_speed()
-        dist_con = distance_convert(distance)
-        time_used = time(speed,dist_con)
-        fuel_used = fuel(speed,distance)
-        print('Years to travel: ', time_used, 'years', '\nFuel to be used: ', fuel_used, 'gal')
-        travel = input('\nDo you want to travel? (Y)es, (N)o\n> ')
-        if travel == 'y' or travel == 'Y':
-            current_fuel = float(current_fuel)
-            fuel_used = float(fuel_used)
-            destination = available_areas_names[0]
-            current_fuel -= fuel_used
-            current_location_name = destination
-            return current_fuel, current_location_name
-    if destination == available_areas_names[1]:
-        os.system("clear")
-        print('\nYou have selected ' + destination + '...\n')
-        destination = available_areas_locations[1]
-        distance = distance(destination)
-        print('This is ', distance, ' units away.')
-        speed = warp_speed()
-        dist_con = distance_convert(distance)
-        time_used = time(speed,dist_con)
-        fuel_used = fuel(speed,distance)
-        print('Years to travel: ', time_used, 'years', '\nFuel to be used: ', fuel_used, 'gal')
-        travel = input('\nDo you want to travel? (Y)es, (N)o\n> ')
-        if travel == 'y' or travel == 'Y':
-            current_fuel = float(current_fuel)
-            current_fuel = round(current_fuel, 3)
-            fuel_used = float(fuel_used)
-            destination = available_areas_names[1]
-            current_fuel -= fuel_used
-            current_location_name = destination
-            return current_fuel, current_location_name
+    while k == 0:
+        l = 0
+        available_areas_names.remove(current_location_name)
+        available_areas_locations.remove(current_location)
+        current_fuel = str(current_fuel)
+        while l == 0:
+            n = 0
+            p = 0
+            os.system("clear")
+            print('Travel Menu\n')
+            print(str('Current location: ') + (current_location_name))
+            print(str('Current fuel level: ') + (current_fuel) + str(' gal\n'))
+            print('Planets available to travel to: ')
+            for i in available_areas_names:
+                n += 1
+                destination = available_areas_locations[(p)]
+                print(str(n) + '. ' + i + ',', distance(destination), 'Light Clicks (LC) away')
+                p += 1
+            destination = str(input('\nSelect number of planet to travel to or (E)xit Travel Menu:\n> '))
+            destination = str(destination)
+            if destination == 'e' or destination == 'E':
+                k = 1
+                l = 1
+            elif destination == '1' or destination == '2':
+                destination = int(destination)
+                destination = available_areas_names[int(destination) -1]
+                if destination == available_areas_names[0]:
+                    os.system("clear")
+                    print('\nYou have selected ' + destination + '...\n')
+                    destination = available_areas_locations[0]
+                    distance = distance(destination)
+                    print('This is ', distance, ' units away.')
+                    speed = warp_speed()
+                    dist_con = distance_convert(distance)
+                    time_used = time(speed,dist_con)
+                    fuel_used = fuel(speed,distance)
+                    print('\nYears to travel: ', time_used, 'years', '\nFuel to be used: ', fuel_used, 'gal')
+                    travel = input('\nDo you want to travel? (Y)es, (N)o\n> ')
+                    if travel == 'y' or travel == 'Y':
+                        current_fuel = float(current_fuel)
+                        fuel_used = float(fuel_used)
+                        destination = available_areas_names[0]
+                        current_fuel -= fuel_used
+                        current_location_name = destination
+                        return current_fuel, current_location_name
+                        l += 1
+                    else:
+                        l = 0
+                if destination == available_areas_names[1]:
+                    os.system("clear")
+                    print('\nYou have selected ' + destination + '...\n')
+                    destination = available_areas_locations[1]
+                    distance = distance(destination)
+                    print('This is ', distance, ' units away.')
+                    speed = warp_speed()
+                    dist_con = distance_convert(distance)
+                    time_used = time(speed,dist_con)
+                    fuel_used = fuel(speed,distance)
+                    print('\nYears to travel: ', time_used, 'years', '\nFuel to be used: ', fuel_used, 'gal')
+                    travel = input('\nDo you want to travel? (Y)es, (N)o\n> ')
+                    if travel == 'y' or travel == 'Y':
+                        current_fuel = float(current_fuel)
+                        current_fuel = round(current_fuel, 3)
+                        fuel_used = float(fuel_used)
+                        destination = available_areas_names[1]
+                        current_fuel -= fuel_used
+                        current_location_name = destination
+                        return current_fuel, current_location_name
+                        l += 1
+                    else:
+                        l = 0
+            else:
+                print('Invalid input')
+                l = 0
+#                else:
+#                    k += 1
         
-
 #print(distance())
 #print(time())
 #print(fuel())
