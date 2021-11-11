@@ -1,5 +1,8 @@
 from planets import *
 import math
+import os
+
+# define variables
 
 earth_name = str('Earth')
 random_planet_name = str('Random Planet')
@@ -18,29 +21,16 @@ starting_fuel = 100.0
 current_fuel = starting_fuel
 available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
 available_areas_locations = [earth_location, alpha_location, random_planet_location]
-destination = alpha_location
+available_areas = [available_areas_names, available_areas_locations]
+#destination = alpha_location
 
-def travel_ui():
-    n = 0
-    global current_fuel
-    available_areas_names.remove(current_location_name)
-    available_areas_locations.remove(current_location)
-    current_fuel = str(current_fuel)
-    print('Travel Menu\n')
-    print(str('Current location: ') + (current_location_name))
-    print(str('Current fuel level: ') + (current_fuel) + str(' gal\n'))
-    print('Planets available to travel to: ')
-    for i in available_areas_names:
-        n += 1
-        print(str(n) + '. ' + i + ' ')
-    destination = input('\nSelect number of planet to travel to:\n> ')
-    destination = available_areas_names[int(destination) -1]
-    return destination
+# define functions
 
 #def current_location():
 #    current_location = destination
 
-def distance():
+def distance(destination):
+#    global destination
     a = current_location[0] 
     b = current_location[1]
     c = destination[0]
@@ -57,7 +47,9 @@ def distance():
 def warp_speed():
     a = ()
     while a == ():
-        W = input('Input integer 1-8 (higher number = faster travel and fuel consumed at higher rate)\n> ')
+        os.system("clear")
+        print('\nPlease calculate how fast you would like to travel')
+        W = input('\nInput integer 1-8 (higher number = faster travel and fuel consumed at higher rate)\n> ')
         W = int(W)
         if W <= 8 and W >= 1:
             W = float(W)
@@ -73,27 +65,67 @@ def warp_speed():
         else:
             print('\nInvalid input\n')
 
-def distance_convert():
-    a = distance()
+def distance_convert(distance):
+    a = distance
     a *= 20
     d = a
     d = round(d)
     return d
 
-def time():
-    d = distance_convert()
-    s = warp_speed()
+def time(speed, dist_con):
+    d = dist_con
+    s = speed
     t = d / s
     t = round(t, 3)
     return t
 
-def fuel():
-    s = warp_speed()
-    a = distance()
+def fuel(speed, distance):
+    s = speed
+    a = distance
     s /= 30
     f = s * a
     f = round(f, 3)
     return f
+
+def travel_ui():
+    global distance
+    global current_location_name
+    os.system("clear")
+    n = 0
+    global current_fuel
+    available_areas_names.remove(current_location_name)
+    available_areas_locations.remove(current_location)
+    current_fuel = str(current_fuel)
+    print('Travel Menu\n')
+    print(str('Current location: ') + (current_location_name))
+    print(str('Current fuel level: ') + (current_fuel) + str(' gal\n'))
+    print('Planets available to travel to: ')
+    for i in available_areas_names:
+        n += 1
+        print(str(n) + '. ' + i)
+    destination = input('\nSelect number of planet to travel to:\n> ')
+    destination = available_areas_names[int(destination) -1]
+    if destination == available_areas_names[0]:
+        os.system("clear")
+        print('\nYou have selected ' + destination + '...\n')
+        destination = available_areas_locations[0]
+        distance = distance(destination)
+        print('This is ', distance, ' units away.')
+        speed = warp_speed()
+        dist_con = distance_convert(distance)
+        time_used = time(speed,dist_con)
+        fuel_used = fuel(speed,distance)
+        print('Years to travel: ', time_used, 'years', '\nFuel to be used: ', fuel_used, 'gal')
+        travel = input('\nDo you want to travel? (Y)es, (N)o\n> ')
+        if travel == 'y' or travel == 'Y':
+            current_fuel = float(current_fuel)
+            fuel_used = float(fuel_used)
+            destination = available_areas_names[0]
+            current_fuel -= fuel_used
+            current_location_name = destination
+#            player_age += time_used
+            return current_fuel, current_location_name
+        
 
 #print(distance())
 #print(time())
