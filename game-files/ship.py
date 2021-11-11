@@ -124,12 +124,11 @@ def travel_ui():
             elif destination == '1' or destination == '2':
                 destination = int(destination)
                 destination = available_areas_names[int(destination) -1]
-
-
-
                 if destination == available_areas_names[0]:
                     os.system("clear")
                     print('\nYou have selected ' + destination + '...\n')
+                    if 'destination' in locals():
+                        del destination
                     destination = available_areas_locations[0]
                     distance = (distance(destination))
                     print('This is ', distance, ' units away.')
