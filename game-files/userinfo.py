@@ -1,5 +1,5 @@
 units = 1000 
-age = 18
+age = 18.0
 userinventory = []
 def unitget(a):
     return units

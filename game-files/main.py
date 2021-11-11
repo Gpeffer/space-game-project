@@ -3,8 +3,8 @@ import planets
 import userinfo
 import os
 import market
-def Not_yet():
-    print("This has not yet been created or linked")
+
+
 def Main_loop():
     answer = 0
     while answer != "q":

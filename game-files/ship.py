@@ -1,5 +1,6 @@
 from planets import *
 import math
+import userinfo
 import os
 
 # define variables
@@ -145,6 +146,7 @@ def travel_ui():
                         fuel_used = float(fuel_used)
                         destination = available_areas_names[0]
                         current_fuel -= fuel_used
+                        userinfo.age += time_used
                         current_location_name = destination
                         current_location = available_areas_locations[0]
                         available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
@@ -172,8 +174,9 @@ def travel_ui():
                         fuel_used = float(fuel_used)
                         destination = available_areas_names[1]
                         current_fuel -= fuel_used
+                        userinfo.age += time_used
                         current_location_name = destination
-                        current_location = available_locations_areas[1]
+                        current_location = available_areas_locations[1]
                         available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
                         available_areas_locations = [earth_location, alpha_location, random_planet_location]
                         available_areas = [available_areas_names, available_areas_locations]
