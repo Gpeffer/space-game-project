@@ -100,7 +100,6 @@ def travel_ui():
         current_fuel = str(current_fuel)
         while l == 0:
             n = 0
-            p = 0
             os.system("clear")
             print('Travel Menu\n')
             print(str('Current location: ') + (current_location_name))
@@ -108,9 +107,7 @@ def travel_ui():
             print('Planets available to travel to: ')
             for i in available_areas_names:
                 n += 1
-                destination = available_areas_locations[(p)]
-                print(str(n) + '. ' + i + ',', distance(destination), 'Light Clicks (LC) away')
-                p += 1
+                print(str(n) + '. ' + i)
             destination = str(input('\nSelect number of planet to travel to or (E)xit Travel Menu:\n> '))
             destination = str(destination)
             if destination == 'e' or destination == 'E':
