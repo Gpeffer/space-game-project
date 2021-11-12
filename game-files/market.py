@@ -13,7 +13,7 @@ def market(currentlocation):
         if currentlocation == "Earth":
            
             if bos == "B" or bos == "b":
-                Marketbuy.buytemp("Diamond", 100, 250, 600)
+                Marketbuy.buytemp("Diamond",100, 250, 600)
            
             if bos == "S" or bos == "s":
                 Marketsell.template(100,250,600,1400,1200)
@@ -21,7 +21,7 @@ def market(currentlocation):
         if currentlocation == "Alpha Aproxima":
            
             if bos == "B" or bos == "b":
-                Marketbuy.buytemp("Flux Capacitor", 150, 300, 900)
+                Marketbuy.buytemp("Flux Capacitor",150, 300, 900)
            
             if bos == "S" or bos == "s":
                 Marketsell.template(150,250,900,800,1300)

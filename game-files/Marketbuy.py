@@ -1,10 +1,13 @@
 import userinfo
 import ship
-
+items = "nothing"
 somethingrandom = 0
+
 
 def buytemp(UniqItem, CoalPrice, IronPrice, UniqItemPrice):
     global somethingrandom
+    global items
+    global units
     print("1. Coal "+ " for " + str(CoalPrice) + "\n"
         + "2. Iron" + " for " + str(IronPrice) +"\n"
         + "3. " + UniqItem + " for " + str(UniqItemPrice) + "\n"
@@ -12,16 +15,21 @@ def buytemp(UniqItem, CoalPrice, IronPrice, UniqItemPrice):
     buy = input("Option>")
 
     if buy == "1":
-         userinfo.units -= 200
+         userinfo.units -= CoalPrice
          userinfo.Coal += 1
 
     if buy == "2":
-        userinfo.units -= 400 
+        userinfo.units -= IronPrice 
         userinfo.Iron += 1
 
     if buy == "3":
-        userinfo.units -= 800
-        userinfo.Spongebob += 1
+        userinfo.units -= UniqItemPrice
+        if UniqItem == "Diamond":
+            userinfo.Diamond += 1
+        if UniqItem == "Flux Capacitor":
+            userinfo.Flux_Capacitor += 1
+        if UniqItem == "Spongebob":
+            userinfo.Spongebob += 1
 
     if buy == "4":
         quantityfuel=input("How much fuel would you like to purchase?  ")

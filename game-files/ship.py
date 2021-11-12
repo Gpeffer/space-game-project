@@ -6,7 +6,6 @@ import userinfo
 import os
 import stdrandom
 import userinfo
-from earthmarket import *
 
 # define variables
 
