@@ -1,7 +1,12 @@
+# importing modules
+
 from planets import *
 import math
 import userinfo
 import os
+import stdrandom
+import userinfo
+from earthmarket import *
 
 # define variables
 
@@ -23,12 +28,8 @@ current_fuel = starting_fuel
 available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
 available_areas_locations = [earth_location, alpha_location, random_planet_location]
 available_areas = [available_areas_names, available_areas_locations]
-#destination = alpha_location
 
 # define functions
-
-#def current_location():
-#    current_location = destination
 
 def distance1(destination):
     a = current_location[0] 
@@ -48,7 +49,6 @@ def distance1(destination):
 def warp_speed():
     a = ()
     while a == ():
-        os.system("clear")
         print('\nPlease calculate how fast you would like to travel')
         W = input('\nInput integer 1-8 (higher number = faster travel and fuel consumed at higher rate)\n> ')
         W = int(W)
@@ -72,7 +72,6 @@ def distance_convert(distance):
     a *= 20
     d = a
     d = round(d)
-#    d = str(d)
     d = float(d)
     return d
     if 'd' in locals():
@@ -95,6 +94,7 @@ def fuel(speed, distance):
     return f
 
 def travel_ui():
+    global earthitems
     global current_location
     global distance
     global current_location_name
@@ -142,6 +142,7 @@ def travel_ui():
                     print('\nYears to travel: ', time_used, 'years', '\nFuel to be used: ', fuel_used, 'gal')
                     travel = input('\nDo you want to travel? (Y)es, (N)o\n> ')
                     if travel == 'y' or travel == 'Y':
+                        os.system("clear")
                         current_fuel = float(current_fuel)
                         fuel_used = float(fuel_used)
                         destination = available_areas_names[0]
@@ -152,7 +153,29 @@ def travel_ui():
                         available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
                         available_areas_locations = [earth_location, alpha_location, random_planet_location]
                         available_areas = [available_areas_names, available_areas_locations]
+                        v = stdrandom.uniformInt(1,10)
+                        if v == 1:
+                            print('\nCongratulations! You found a meteorite containing Coal!')
+                            print('Item will automatically be added to your inventory.')
+                            userinfo.userinventory += [earthitems[0][3:]]
+                        if v == 2:
+                            print('\nCongratulations! You found a meteorite containing Iron!')
+                            print('Item will automatically be added to your inventory.')
+                            userinfo.userinventory += [earthitems[0][3:]]
+                        if v == 3:
+                            print('\nCongratulations! You found a meteorite containing Diamonds!')
+                            print('Item will automatically be added to your inventory.')
+                            userinfo.userinventory += [earthitems[0][3:]]
+                        if v == 4:
+                            print('\nCongratulations! You found a meteorite containing Coal!')
+                            print('Item will automatically be added to your inventory.')
+                            userinfo.userinventory += [earthitems[0][3:]]
+                        if v == 5:
+                            print('\nCongratulations! You found a meteorite containing Coal!')
+                            print('Item will automatically be added to your inventory.')
+                            userinfo.userinventory += [earthitems[0][3:]]
                         return current_fuel, current_location_name
+                        os.system("clear")
                         l += 1
                     else:
                         l = 1
@@ -187,11 +210,3 @@ def travel_ui():
             else:
                 print('Invalid input')
                 l = 0
-    
-        
-#print(distance())
-#print(time())
-#print(fuel())
-#print(warp_speed())
-#print(earth_info)
-#print(travel_ui())
