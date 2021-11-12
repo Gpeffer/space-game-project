@@ -5,9 +5,9 @@ noitem = "You can't sell hopes and dreams!"
 itemexists = "Thank you for your business."
 
 
-def earthsell(): 
+def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice):
 
-    userinfo.inventorygetforsell(100,250,600,1400,1200)
+    userinfo.inventorygetforsell(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice)
     option = input("Input Number of item you wish to sell. \n >")
 
     if option == "1":
@@ -17,7 +17,7 @@ def earthsell():
 
         if userinfo.Coal > 0:
             userinfo.Coal -= 1
-            userinfo.units += 100
+            userinfo.units += coalprice
             print(itemexists)
 
     if option == "2":
@@ -27,7 +27,7 @@ def earthsell():
 
         if userinfo.Iron > 0:
             userinfo.Iron -= 1
-            userinfo.units += 250
+            userinfo.units += ironprice
             print(itemexists)
 
     if option == "3":
@@ -37,7 +37,7 @@ def earthsell():
 
         if userinfo.Diamond > 0:
             userinfo.Diamond -= 1
-            userinfo.units += 600
+            userinfo.units += diamondprice
 
     if option == "4":
 
@@ -46,7 +46,7 @@ def earthsell():
 
         if userinfo.Flux_Capacitor > 0:
             userinfo.Flux_Capacitor -= 1
-            userinfo.units += 1200
+            userinfo.units += Flux_Capacitorprice
 
     if option == "5":
 
@@ -55,114 +55,14 @@ def earthsell():
 
         if userinfo.Spongebob > 0:
             userinfo.Spongebob -= 1
-            userinfo.units += 1400
+            userinfo.units += Spongebobprice
             print(itemexists)
+
+def earthsell(): 
+    template(100,250,600,1400,1200)
 
 def alphasell():
-
-    userinfo.inventorygetforsell(150,250,900,800,1300)
-    option = input("Input Number of item you wish to sell. \n >")
-
-    if option == "1":
-
-        if userinfo.Coal == 0:
-            print(noitem)
-
-        if userinfo.Coal > 0:
-            userinfo.Coal -= 1
-            userinfo.units += 150
-            print(itemexists)
-
-    if option == "2":
-
-        if userinfo.Iron == 0:
-            print(noitem)
-
-        if userinfo.Iron > 0:
-            userinfo.Iron -= 1
-            userinfo.units += 300
-            print(itemexists)
-
-    if option == "3":
-
-        if userinfo.Diamond == 0:
-            print(noitem)
-
-        if userinfo.Diamond > 0:
-            userinfo.Diamond -= 1
-            userinfo.units += 900
-
-    if option == "4":
-        if userinfo.Flux_Capacitor == 0:
-            print(noitem)
-        if userinfo.Flux_Capacitor > 0:
-            userinfo.Flux_Capacitor -= 1
-            userinfo.units += 800
-
-    if option == "5":
-
-        if userinfo.Spongebob == 0:
-            print(noitem)
-
-        if userinfo.Spongebob > 0:
-            userinfo.Spongebob -= 1
-            userinfo.units += 1300
-            print(itemexists)
-
+    template(150,250,900,800,1300)
 
 def randomsell():
-
-    userinfo.inventorygetforsell(200,400,1400,1600,800)
-    option = input("Input Number of item you wish to sell. \n >")
-
-    if option == "1":
-
-        if userinfo.Coal == 0:
-            print(noitem)
-
-        if userinfo.Coal > 0:
-            userinfo.Coal -= 1
-            userinfo.units += 200
-            print(itemexists)
-
-    if option == "2":
-
-        if userinfo.Iron == 0:
-            print(noitem)
-
-        if userinfo.Iron > 0:
-            userinfo.Iron -= 1
-            userinfo.units += 400
-            print(itemexists)
-
-    if option == "3":
-
-        if userinfo.Diamond == 0:
-            print(noitem)
-
-        if userinfo.Diamond > 0:
-            userinfo.Diamond -= 1
-            userinfo.units += 1400
-
-    if option == "4":
-        if userinfo.Flux_Capacitor == 0:
-            print(noitem)
-        if userinfo.Flux_Capacitor > 0:
-            userinfo.Flux_Capacitor -= 1
-            userinfo.units += 1600
-
-    if option == "5":
-
-        if userinfo.Spongebob == 0:
-            print(noitem)
-
-        if userinfo.Spongebob > 0:
-            userinfo.Spongebob -= 1
-            userinfo.units += 800
-            print(itemexists)
-   
-
-
-    
-
-    
+    template(200,400,1400,1600,800)
