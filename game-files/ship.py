@@ -137,7 +137,7 @@ def travel_ui():
                         del destination
                     destination = available_areas_locations[0]
                     distance = distance1(destination)
-                    print('This is ', distance, ' units away.')
+                    print('This is', distance, 'units away.')
                     speed = warp_speed()
                     dist_con = distance_convert(distance)
                     time_used = time(speed,dist_con)
@@ -188,7 +188,7 @@ def travel_ui():
                                 userinfo.Spongebob += 1
                                 v = input('\nPress enter to continue to your destination.\n> ') 
                             u += 1
-                        current_fuel = round(current_fuel, 3)
+                        current_fuel = round(current_fuel)
                         return current_fuel, current_location_name
                         l += 1
                     else:
@@ -198,7 +198,7 @@ def travel_ui():
                     print('\nYou have selected ' + destination + '...\n')
                     destination = available_areas_locations[1]
                     distance = distance1(destination)
-                    print('This is ', distance, ' units away.')
+                    print('This is', distance, 'units away.')
                     speed = warp_speed()
                     dist_con = distance_convert(distance)
                     time_used = time(speed,dist_con)
@@ -249,7 +249,7 @@ def travel_ui():
                                 userinfo.Spongebob += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             u += 1
-                        current_fuel = round(current_fuel, 3)
+                        current_fuel = round(current_fuel)
                         return current_fuel, current_location_name
                         l += 1
                     else:
