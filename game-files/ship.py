@@ -153,29 +153,40 @@ def travel_ui():
                         available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
                         available_areas_locations = [earth_location, alpha_location, random_planet_location]
                         available_areas = [available_areas_names, available_areas_locations]
+                        if 'v' in locals():
+                            del v
                         v = stdrandom.uniformInt(1,10)
-                        if v == 1:
-                            print('\nCongratulations! You found a meteorite containing Coal!')
-                            print('Item will automatically be added to your inventory.')
-                            userinfo.userinventory += [earthitems[0][3:]]
-                        if v == 2:
-                            print('\nCongratulations! You found a meteorite containing Iron!')
-                            print('Item will automatically be added to your inventory.')
-                            userinfo.userinventory += [earthitems[0][3:]]
-                        if v == 3:
-                            print('\nCongratulations! You found a meteorite containing Diamonds!')
-                            print('Item will automatically be added to your inventory.')
-                            userinfo.userinventory += [earthitems[0][3:]]
-                        if v == 4:
-                            print('\nCongratulations! You found a meteorite containing Coal!')
-                            print('Item will automatically be added to your inventory.')
-                            userinfo.userinventory += [earthitems[0][3:]]
-                        if v == 5:
-                            print('\nCongratulations! You found a meteorite containing Coal!')
-                            print('Item will automatically be added to your inventory.')
-                            userinfo.userinventory += [earthitems[0][3:]]
+                        u = 0
+                        while u == 0:
+                            os.system("clear")
+                            if v == 1:
+                                print('\nCongratulations! You found a meteorite containing Coal!')
+                                print('\nItem will automatically be added to your inventory.')
+                                userinfo.Coal += 1
+                                v = input('\nPress enter to continue to your destination.\n> ')
+                            elif v == 2:
+                                print('\nCongratulations! You found a meteorite containing Iron!')
+                                print('\nItem will automatically be added to your inventory.')
+                                userinfo.Iron += 1
+                                v = input('\nPress enter to continue to your destination.\n> ')
+                            elif v == 3:
+                                print('\nCongratulations! You found a meteorite containing Diamonds!')
+                                print('\nItem will automatically be added to your inventory.')
+                                userinfo.Diamond += 1
+                                v = input('\nPress enter to continue to your destination.\n> ')
+                            elif v == 4:
+                                print('\nCongratulations! You found a meteorite containing a Flux Capacitor!')
+                                print('\nItem will automatically be added to your inventory.')
+                                userinfo.Flux_Capacitor += 1
+                                v = input('\nPress enter to continue to your destination.\n> ')
+                            elif v == 5:
+                                print('\nCongratulations! You found a meteorite containing SPONGEBOB!')
+                                print('\nItem will automatically be added to your inventory.')
+                                userinfo.Spongebob += 1
+                                v = input('\nPress enter to continue to your destination.\n> ') 
+                            u += 1
+                        current_fuel = round(current_fuel, 3)
                         return current_fuel, current_location_name
-                        os.system("clear")
                         l += 1
                     else:
                         l = 1
@@ -203,6 +214,38 @@ def travel_ui():
                         available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
                         available_areas_locations = [earth_location, alpha_location, random_planet_location]
                         available_areas = [available_areas_names, available_areas_locations]
+                        if 'v' in locals():
+                            del v
+                        v = stdrandom.uniformInt(1,10)
+                        u = 0
+                        while u == 0:
+                            os.system("clear")
+                            if v == 1:
+                                print('\nCongratulations! You found a meteorite containing Coal!')
+                                print('\nItem will automatically be added to your inventory.')
+                                userinfo.Coal += 1
+                                v = input('\nPress enter to continue to your destination.\n> ')
+                            elif v == 2:
+                                print('\nCongratulations! You found a meteorite containing Iron!')
+                                print('\nItem will automatically be added to your inventory.')
+                                userinfo.Iron += 1
+                                v = input('\nPress enter to continue to your destination.\n> ')
+                            elif v == 3:
+                                print('\nCongratulations! You found a meteorite containing Diamonds!')
+                                print('\nItem will automatically be added to your inventory.')
+                                userinfo.Diamond += 1
+                                v = input('\nPress enter to continue to your destination.\n> ')
+                            elif v == 4:
+                                print('\nCongratulations! You found a meteorite containing a Flux Capacitor!')
+                                print('\nItem will automatically be added to your inventory.')
+                                userinfo.Flux_Capacitor += 1
+                                v = input('\nPress enter to continue to your destination.\n> ')
+                            elif v == 5:
+                                print('\nCongratulations! You found a meteorite containing SPONGEBOB!')
+                                print('\nItem will automatically be added to your inventory.')
+                                userinfo.Spongebob += 1
+                                v = input('\nPress enter to continue to your destination.\n> ')
+                        current_fuel = round(current_fuel, 3)
                         return current_fuel, current_location_name
                         l += 1
                     else:
