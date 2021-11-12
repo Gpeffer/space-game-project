@@ -33,6 +33,9 @@ def Main_loop():
             os.system("clear")
             print(userinfo.inventoryget())
             input("Press Enter to exit.\n")
+            
+        if answer == "small loan of a million units":
+            userinfo.units += 1000000
 
 
 Main_loop()
