@@ -245,6 +245,7 @@ def travel_ui():
                                 print('\nItem will automatically be added to your inventory.')
                                 userinfo.Spongebob += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
+                            u += 1
                         current_fuel = round(current_fuel, 3)
                         return current_fuel, current_location_name
                         l += 1
