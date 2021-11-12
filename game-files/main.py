@@ -11,11 +11,11 @@ def Main_loop():
         
         os.system("clear")
         units = userinfo.units
-        
-        print("Age:   "+ str(round(userinfo.age,2)))
-        print("Fuel:  " + str(round(ship.current_fuel, 2)))
-        print("Units: " + str(units))
-        print("What would you like to do?\n"
+        print("               Planet: "+ ship.current_location_name)
+        print("               Units: " + str(units))
+        print("               Fuel: " + str(round(ship.current_fuel)))
+        print("               Age: "+ str(round(userinfo.age)))
+        print("        What would you like to do?\n"
              + "T for Travel                M for Market\n"
              + "I for Inventory             Q for Quit Game\n"
              + "Choice?  ", end = "")
@@ -32,8 +32,7 @@ def Main_loop():
         if answer == "i" or answer == "I":
             os.system("clear")
             print(userinfo.inventoryget())
-            print("Enter Any Key To Exit")
-            input()
+            input("Press Enter to exit.\n")
 
 
 Main_loop()
