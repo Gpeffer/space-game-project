@@ -3,6 +3,7 @@ import planets
 import userinfo
 import os
 import market
+import story
 
 
 def Main_loop():
@@ -14,7 +15,7 @@ def Main_loop():
         print("               Planet: "+ ship.current_location_name)
         print("               Units: " + str(units))
         print("               Fuel: " + str(ship.current_fuel))
-        print("               Age: "+ str(round(userinfo.age)))
+        print("               Age: "+ str(round(userinfo.age, 1)))
         print("        What would you like to do?\n"
              + "T for Travel                M for Market\n"
              + "I for Inventory             Q for Quit Game\n"
