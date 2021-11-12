@@ -9,4 +9,4 @@ def market(currentlocation):
     if currentlocation == "Alpha Aproxima":
         alphamarket.alphasmarket()
     if currentlocation == "Random Planet":
-        randommarket.randommarket()
+        randommarket.randomsmarket()

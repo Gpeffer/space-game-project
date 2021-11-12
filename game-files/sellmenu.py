@@ -109,6 +109,57 @@ def alphasell():
             userinfo.units += 1300
             print(itemexists)
 
+
+def randomsell():
+
+    userinfo.inventorygetforsell(200,400,1400,1600,800)
+    option = input("Input Number of item you wish to sell. \n >")
+
+    if option == "1":
+
+        if userinfo.Coal == 0:
+            print(noitem)
+
+        if userinfo.Coal > 0:
+            userinfo.Coal -= 1
+            userinfo.units += 200
+            print(itemexists)
+
+    if option == "2":
+
+        if userinfo.Iron == 0:
+            print(noitem)
+
+        if userinfo.Iron > 0:
+            userinfo.Iron -= 1
+            userinfo.units += 400
+            print(itemexists)
+
+    if option == "3":
+
+        if userinfo.Diamond == 0:
+            print(noitem)
+
+        if userinfo.Diamond > 0:
+            userinfo.Diamond -= 1
+            userinfo.units += 1400
+
+    if option == "4":
+        if userinfo.Flux_Capacitor == 0:
+            print(noitem)
+        if userinfo.Flux_Capacitor > 0:
+            userinfo.Flux_Capacitor -= 1
+            userinfo.units += 1600
+
+    if option == "5":
+
+        if userinfo.Spongebob == 0:
+            print(noitem)
+
+        if userinfo.Spongebob > 0:
+            userinfo.Spongebob -= 1
+            userinfo.units += 800
+            print(itemexists)
    
 
 
