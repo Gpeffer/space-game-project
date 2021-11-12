@@ -13,7 +13,7 @@ def Main_loop():
         units = userinfo.units
         print("               Planet: "+ ship.current_location_name)
         print("               Units: " + str(units))
-        print("               Fuel: " + str(round(ship.current_fuel)))
+        print("               Fuel: " + str(ship.current_fuel))
         print("               Age: "+ str(round(userinfo.age)))
         print("        What would you like to do?\n"
              + "T for Travel                M for Market\n"

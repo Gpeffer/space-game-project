@@ -103,8 +103,12 @@ def travel_ui():
     os.system("clear")
     k = 0
     global current_fuel
-    available_areas_names.remove(current_location_name)
-    available_areas_locations.remove(current_location)
+    for i in available_areas_names:
+        if(i == current_location_name) :
+            available_areas_names.remove(current_location_name)
+    for i in available_areas_locations:
+        if(i == current_location) :
+            available_areas_locations.remove(current_location)
     current_fuel = str(current_fuel)
     while k == 0:
         l = 0
