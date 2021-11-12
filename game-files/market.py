@@ -1,13 +1,14 @@
 import userinfo
 import Marketbuy
 import Marketsell
-
+import os
 #buytemp(Uniqitem, coal price, ironprice, uniqitem price)
 #selltemp(coal price, iron price, diamond price, flux capacitor price, spongebob price)
 
 def market(currentlocation):
     stay = "y"
     while stay == "y" or stay == "Y":
+        os.system("clear")
         bos = input("Would you like to (B)uy or (S)ell")
 
         if currentlocation == "Earth":
