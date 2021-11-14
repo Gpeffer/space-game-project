@@ -39,12 +39,15 @@ def Main_loop():
             
         if answer == "small loan of a million units":
             userinfo.units += 1000000
-        if userinfo.units >= 50000:
+        if userinfo.units >= 50000 and onetime == 0:
             onetime += 1
             print("Placeholder You have won!")
             contend = input("Would you like to continue? (Y,n")
             if contend == "n":
                 answer = "q"
+        if userinfo.age >= 62:
+            print("Placeholder")
+            answer = "q"
 
 
 Main_loop()

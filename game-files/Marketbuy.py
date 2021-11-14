@@ -33,7 +33,7 @@ def buytemp(UniqItem, CoalPrice, IronPrice, UniqItemPrice):
     if buy == "3":
         if (userinfo.units - UniqItemPrice) <= 0:
             print("Credit doesn't exist in space.")
-        if (userinfo.units - UniqitemPrice) >= 0:
+        if (userinfo.units - UniqItemPrice) >= 0:
             userinfo.units -= UniqItemPrice
             if UniqItem == "Diamond":
                 userinfo.Diamond += 1
