@@ -15,21 +15,33 @@ def buytemp(UniqItem, CoalPrice, IronPrice, UniqItemPrice):
     buy = input("Option>")
 
     if buy == "1":
-         userinfo.units -= CoalPrice
-         userinfo.Coal += 1
+        if (userinfo.units - CoalPrice) <= 0:
+            print("Credit doesn't exist in space!")
+        if (userinfo.units - CoalPrice) >= 0:
+            userinfo.units -= CoalPrice
+            userinfo.Coal += 1
+            print("Thank you for your business.")
 
     if buy == "2":
-        userinfo.units -= IronPrice 
-        userinfo.Iron += 1
+        if (userinfo.units - IronPrice) <= 0:
+            print("Credit doesn't exist in space.")
+        if (userinfo.units - IronPrice) >= 0:
+            userinfo.units -= IronPrice 
+            userinfo.Iron += 1
+            print("Thank you for business.")
 
     if buy == "3":
-        userinfo.units -= UniqItemPrice
-        if UniqItem == "Diamond":
-            userinfo.Diamond += 1
-        if UniqItem == "Flux Capacitor":
-            userinfo.Flux_Capacitor += 1
-        if UniqItem == "Spongebob":
-            userinfo.Spongebob += 1
+        if (userinfo.units - UniqItemPrice) <= 0:
+            print("Credit doesn't exist in space.")
+        if (userinfo.units - UniqitemPrice) >= 0:
+            userinfo.units -= UniqItemPrice
+            if UniqItem == "Diamond":
+                userinfo.Diamond += 1
+            if UniqItem == "Flux Capacitor":
+                userinfo.Flux_Capacitor += 1
+            if UniqItem == "Spongebob":
+                userinfo.Spongebob += 1
+            print("Thank you for your business")
 
     if buy == "4":
         quantityfuel=input("How much fuel would you like to purchase?  ")

@@ -5,8 +5,10 @@ import os
 import market
 import story
 
+onetime =0
 
 def Main_loop():
+    global onetime
     answer = 0
     while answer != "q" and answer != "Q":
         
@@ -37,6 +39,12 @@ def Main_loop():
             
         if answer == "small loan of a million units":
             userinfo.units += 1000000
+        if userinfo.units >= 50000:
+            onetime += 1
+            print("Placeholder You have won!")
+            contend = input("Would you like to continue? (Y,n")
+            if contend == "n":
+                answer = "q"
 
 
 Main_loop()
