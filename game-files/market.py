@@ -9,7 +9,7 @@ def market(currentlocation):
     stay = "y"
     while stay == "y" or stay == "Y":
         os.system("clear")
-        bos = input("Would you like to (B)uy or (S)ell")
+        bos = input("Would you like to (B)uy or (S)ell? \n>")
 
         if currentlocation == "Earth":
            
