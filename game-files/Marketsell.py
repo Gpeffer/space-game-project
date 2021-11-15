@@ -1,24 +1,42 @@
 import userinfo 
 
-
+number = 0
 noitem = "You can't sell hopes and dreams!"
-itemexists = "Thank you for your business."
 
+def sellmorefaster(item):
+    global number
+    global tryagain
+    number = input("How much " + item  + " would you like to sell? \n >")
+    if number.isdigit():
+        number = int(number)
+        if number <= 0:
+            print("Sale Canceled")
+        if number >= 1:
+            return int(number)
+    if not number.isdigit():
+        while not number.isdigit():
+            number = input("Invalid input. \nHow much " + item + " would you like to sell? \n >")
 
 def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice):
-
+    tryagain = "Placeholder"
     userinfo.inventorygetforsell(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice)
     option = input("Input Number of item you wish to sell. \n >")
 
     if option == "1":
-
         if userinfo.Coal == 0:
             print(noitem)
 
         if userinfo.Coal > 0:
-            userinfo.Coal -= 1
-            userinfo.units += coalprice
-            print(itemexists)
+            sellmorefaster("Coal")
+            if userinfo.Coal < number:
+                while not tryagain == "n" and not tryagain == "N" and userinfo.Coal < number:
+                    tryagain = input("You don't have that much to sell. Try again?")
+                    if tryagain == "y" or tryagain =="Y":
+                        sellmorefaster("Coal")
+            if userinfo.Coal >= number:
+                userinfo.Coal -= number
+                userinfo.units += (coalprice * number)
+                print("You have sold " + str(number) + " Coal for " + str(coalprice * number) + ".")
 
     if option == "2":
 
@@ -26,9 +44,17 @@ def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice
             print(noitem)
 
         if userinfo.Iron > 0:
-            userinfo.Iron -= 1
-            userinfo.units += ironprice
-            print(itemexists)
+            sellmorefaster("Iron")
+            if userinfo.Iron < number:
+                while not tryagain == "n" and not tryagain == "N" and userinfo.Iron < number:
+                    tryagain = input("You don't have that much to sell. Try again?")
+                    if tryagain == "y" or tryagain == "Y":
+                        sellmorefaster("Iron")
+            if userinfo.Iron >= number:
+                userinfo.Iron -= number
+                userinfo.units += (ironprice * number)
+                print("You have sold " + str(number) + " iron for " + str(ironprice * number) + ".")
+
 
     if option == "3":
 
@@ -36,8 +62,16 @@ def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice
             print(noitem)
 
         if userinfo.Diamond > 0:
-            userinfo.Diamond -= 1
-            userinfo.units += diamondprice
+            sellmorefaster("Diamond")
+            if userinfo.Diamond < number:
+                while not tryagain == "n" and not tryagain == "N" and userinfo.Diamond < number:
+                    tryagain = input("You don't have that much to sell. Try again?")
+                    if tryagain == "y" or tryagain == "Y":
+                        sellmorefaster("Diamond")
+            if userinfo.Diamond >= number:
+                userinfo.Diamond -= number
+                userinfo.units += (diamondprice * number)
+                print("You have sold " + str(number) + " diamond for " + str(ironprice * number) + ".")
 
     if option == "4":
 
@@ -45,8 +79,16 @@ def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice
             print(noitem)
 
         if userinfo.Flux_Capacitor > 0:
-            userinfo.Flux_Capacitor -= 1
-            userinfo.units += Flux_Capacitorprice
+            sellmorefaster("Flux Capacitor")
+            if userinfo.Flux_Capacitor < number:
+                while not tryagain == "n" and not tryagain == "N" and userinfo.Diamond < number:
+                    tryagain = input("You don't have that much to sell. Try again?")
+                    if tryagain == "y" or tryagain == "Y" and userinfo.Flux_Capacitor < number:
+                        sellmorefaster("Flux Capacitor")
+            if userinfo.Flux_Capacitor >= number:  
+                userinfo.Flux_Capacitor -= number
+                userinfo.units += (Flux_Capacitorprice * number)
+                print("You have sold " + str(number) + " Flux Capacitor for " + str(Flux_Capacitorprice * number) + ".")
 
     if option == "5":
 
@@ -54,9 +96,16 @@ def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice
             print(noitem)
 
         if userinfo.Spongebob > 0:
-            userinfo.Spongebob -= 1
-            userinfo.units += Spongebobprice
-            print(itemexists)
+            sellmorefaster("Spongebob")
+            if userinfo.Spongebob < number:
+                while not tryagain =="n" and not tryagain =="N" and userinfo.Spongebob:
+                    tryagain = input("You don't have that much to sell. Try again?")
+                    if tryagain == "y" or tryagain == "Y" and userinfo.Spongebob < number:
+                        sellmorefaster("Spongebob")
+            if userinfo.Spongebob >= number:
+                userinfo.Spongebob -= number
+                userinfo.units += (Spongebobprice * number)
+                print("You have sold " + str(number) + " Spongebob for " + str(Spongebobprice * number) + ".")
 
 def earthsell(): 
     template(100,250,600,1400,1200)
