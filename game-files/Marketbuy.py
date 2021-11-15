@@ -81,9 +81,9 @@ def buytemp(UniqItem, CoalPrice, IronPrice, UniqItemPrice):
             if UniqItem == "Diamond":
                 userinfo.Diamond += number
             if UniqItem == "Flux Capacitor":
-                userinfo.Flux_Capacitor += 1
+                userinfo.Flux_Capacitor += number
             if UniqItem == "Spongebob":
-                userinfo.Spongebob += 1
+                userinfo.Spongebob += number
             print("You have purchased " + str(number) +" "+ UniqItem + " for " + str(UniqItemPrice * number))
 
     if buy == "4":
