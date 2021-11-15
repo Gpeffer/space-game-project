@@ -131,7 +131,7 @@ for i in start_of_game_items:
     n += 1
     print(n, i)
 print('\nGame rules:')
-game_rules = ['You must try to acquire wealth by buying and selling resources among the galaxy.', 'Each planet has at least one unique resource.', 'Traveling requires fuel, and time.', 'The game will end once you reach 62 years of age.', 'You have a chance every time you travel to find a meteorite with a resource in it.']
+game_rules = ['You must try to acquire wealth by buying and selling resources across the galaxy.', 'Each planet has at least one unique resource.', 'Traveling requires fuel, and time.', 'The game will end once you reach 62 years of age.', 'You have a chance every time you travel to find a meteorite with a resource in it.']
 n = 0
 for i in game_rules:
     n += 1
