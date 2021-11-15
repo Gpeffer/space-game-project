@@ -1,11 +1,10 @@
 import userinfo 
 
-number = 0
+number = int(0)
 noitem = "You can't sell hopes and dreams!"
 
 def sellmorefaster(item):
     global number
-    global tryagain
     number = input("How much " + item  + " would you like to sell? \n >")
     if number.isdigit():
         number = int(number)
@@ -16,6 +15,8 @@ def sellmorefaster(item):
     if not number.isdigit():
         while not number.isdigit():
             number = input("Invalid input. \nHow much " + item + " would you like to sell? \n >")
+        number = int(number)
+        return int(number)
 
 def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice):
     tryagain = "Placeholder"
