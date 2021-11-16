@@ -27,6 +27,7 @@ current_fuel = starting_fuel
 available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
 available_areas_locations = [earth_location, alpha_location, random_planet_location]
 available_areas = [available_areas_names, available_areas_locations]
+destruct = int(0)
 
 # define functions
 
@@ -100,6 +101,7 @@ def travel_ui():
     global available_areas_locations
     global available_areas_names
     global available_areas
+    destruct = int(0)
     os.system("clear")
     k = 0
     global current_fuel
@@ -189,7 +191,32 @@ def travel_ui():
                                 v = input('\nPress enter to continue to your destination.\n> ') 
                             u += 1
                         current_fuel = round(current_fuel)
-                        return current_fuel, current_location_name
+                        if current_fuel <= 0.0:
+                            os.system("clear")
+                            print('Oh no! You\'ve ran out of fuel while traveling among the stars.')
+                            input('\nPress enter to continue.\n> ')
+                            os.system("clear")
+                            print('The Galaxy is a dangerous place to be floating around aimlessly.\nYou\'ve become a target.')
+                            input('\nPress enter to continue.\n> ')
+                            os.system("clear")
+                            print('Some space Pirates spot you from their vessel and take interest.\nYou had better act quick. What will you do?\n')
+                            pirates = ['Try to find extra fuel stored on ship (Take chance to find enough fuel to complete journey)', 'Hit self-destruct button (Don\'t give them the pleasure)', 'Try to bribe the Pirates 1000 units to leave you alone']
+                            num = 0
+                            for i in pirates:
+                                num += 1
+                                num = str(num)
+                                print(num + '.', i)
+                                num = int(num)
+                            choice = input('\nChoose option:\n> ')
+                            if choice == 1:
+                                print('placeholder')
+                            if choice == 2:
+                                print('BOOM')
+                                print('\nPress enter to continue.\n> ')
+                                destruct = 1
+                            if choice == 3:
+                                print('placeholder')
+                        return current_fuel, current_location_name, destruct
                         l += 1
                     else:
                         l = 1

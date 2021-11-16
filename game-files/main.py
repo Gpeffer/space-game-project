@@ -9,6 +9,7 @@ onetime = 0
 
 def Main_loop():
     global onetime
+    global destruct
     answer = 0
     while answer != "q" and answer != "Q":
         
@@ -25,6 +26,9 @@ def Main_loop():
              + "\nChoose option:\n> ", end = "")
         answer = input() 
        
+        if ship.destruct == 1:
+            answer = "q"
+
         if answer == "t" or answer == "T":
             os.system("clear")
             ship.travel_ui()
