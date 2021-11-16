@@ -1,5 +1,6 @@
 import userinfo
 import ship
+import os
 
 items = "nothing"
 onetimeprint = 0
@@ -7,7 +8,8 @@ number = 1
 
 def buymorethanone(item):
     global number
-    number = input("How much " + item  + " would you like to buy? \n >")
+    os.system("clear")
+    number = input("How much " + item  + " would you like to buy?\n\nChoose quantity:\n> ")
     if number.isdigit():
         number = int(number)
         if number <= 0:
@@ -16,7 +18,8 @@ def buymorethanone(item):
             return int(number)
     if not number.isdigit():
         while not number.isdigit():
-            number = input("Invalid input. \nHow much " + item + " would you like to buy? \n >")
+            os.system("clear")
+            number = input("Invalid input. \nHow much " + item + " would you like to buy?\n\nChoose quantity:\n> ")
         number = int(number)
         return int(number)
 
@@ -27,11 +30,12 @@ def buytemp(UniqItem, CoalPrice, IronPrice, UniqItemPrice):
     global items
     global units
     tryagain = "Placeholder"
-    print("1. Coal "+ " for " + str(CoalPrice) + "\n"
+    print("Available items:\n\n"
+        + "1. Coal "+ " for " + str(CoalPrice) + "\n"
         + "2. Iron" + " for " + str(IronPrice) +"\n"
         + "3. " + UniqItem + " for " + str(UniqItemPrice) + "\n"
         + "4. Fuel for 1 unit per gallon")
-    buy = input("Option>")
+    buy = input("\nChoose option:\n> ")
 
     if buy == "1":
         if userinfo.units < CoalPrice:
@@ -41,7 +45,7 @@ def buytemp(UniqItem, CoalPrice, IronPrice, UniqItemPrice):
                 buymorethanone("Coal")
                 if userinfo.units < (CoalPrice * number):
                     while not tryagain == "N" and not tryagain == "n" and (CoalPrice * number) > userinfo.units:
-                        tryagain = input("You do not have enough units. \nWould you like to try again? (Y/N)")
+                        tryagain = input("You do not have enough units. \nWould you like to try again? (Y/N)\n\nChoose option:\n> ")
                         if tryagain == "y" or tryagain == "Y":
                             buymorethanone("Coal")
             if userinfo.units >= (CoalPrice * number): 
@@ -57,7 +61,7 @@ def buytemp(UniqItem, CoalPrice, IronPrice, UniqItemPrice):
                 buymorethanone("Iron")
                 if userinfo.units < (IronPrice * number):
                     while not tryagain == "n" and not tryagain == "N" and int(IronPrice * number) > userinfo.units:
-                        tryagain = input("You do not have enough units. \nWould you like to try again? (Y/N)")
+                        tryagain = input("You do not have enough units. \nWould you like to try again? (Y/N)\n\nChoose option:\n> ")
                         if tryagain =="y" or tryagain == "Y":
                             buymorethanone("Iron")
             if userinfo.units >= (IronPrice * number):    
@@ -74,7 +78,7 @@ def buytemp(UniqItem, CoalPrice, IronPrice, UniqItemPrice):
                 buymorethanone(UniqItem)
                 if userinfo.units < (UniqItemPrice * number):
                     while not tryagain == "n" and not tryagain == "N" and int(UniqItemPrice * number) > userinfo.units:
-                        tryagain = input("You do not have enough units. \nWould you like to try again? (Y/N)")
+                        tryagain = input("You do not have enough units. \nWould you like to try again? (Y/N)\n\nChoose option:\n> ")
                         if tryagain == "Y" or tryagain == "y":
                             buymorethanone(UniqItem)
             userinfo.units -= UniqItemPrice * number 
@@ -87,12 +91,13 @@ def buytemp(UniqItem, CoalPrice, IronPrice, UniqItemPrice):
             print("You have purchased " + str(number) +" "+ UniqItem + " for " + str(UniqItemPrice * number))
 
     if buy == "4":
-        quantityfuel=input("How much fuel would you like to purchase?  >")
+        os.system("clear")
+        quantityfuel=input("How much fuel would you like to purchase?\n\nChoose quantity:\n> ")
 
         if not quantityfuel.isdigit():
             while not quantityfuel.isdigit():
                 print("Invalid input detected. Please input a integer")
-                quantityfuel=input("How much fuel would you like to purchase?  ")
+                quantityfuel=input("How much fuel would you like to purchase?\n\nChoose quantity:\n> ")
 
         quantityfuel = int(quantityfuel)
         if (userinfo.units - quantityfuel) <= 0:

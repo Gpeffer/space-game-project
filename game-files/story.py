@@ -143,6 +143,5 @@ for i in win_con:
     n += 1
     print(n, i)
 print('\nGood luck, ' + user_name + '!')
-time.sleep(1)
 input('\nPress enter to continue\n> ')
 os.system("clear")

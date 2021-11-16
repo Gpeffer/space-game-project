@@ -1,11 +1,13 @@
-import userinfo 
+import userinfo
+import os
 
 number = int(0)
 noitem = "You can't sell hopes and dreams!"
 
 def sellmorefaster(item):
     global number
-    number = input("How much " + item  + " would you like to sell? \n >")
+    os.system("clear")
+    number = input("How much " + item  + " would you like to sell?\n\nChoose quantity:\n> ")
     if number.isdigit():
         number = int(number)
         if number <= 0:
@@ -21,7 +23,7 @@ def sellmorefaster(item):
 def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice):
     tryagain = "Placeholder"
     userinfo.inventorygetforsell(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice)
-    option = input("Input Number of item you wish to sell. \n >")
+    option = input("\nChoose option:\n> ")
 
     if option == "1":
         if userinfo.Coal == 0:
@@ -31,7 +33,7 @@ def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice
             sellmorefaster("Coal")
             if userinfo.Coal < number:
                 while not tryagain == "n" and not tryagain == "N" and userinfo.Coal < number:
-                    tryagain = input("You don't have that much to sell. Try again?")
+                    tryagain = input("You don't have that much to sell. Try again? (Y/N)\n\nChoose option:\n> ")
                     if tryagain == "y" or tryagain =="Y":
                         sellmorefaster("Coal")
             if userinfo.Coal >= number:
@@ -48,7 +50,7 @@ def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice
             sellmorefaster("Iron")
             if userinfo.Iron < number:
                 while not tryagain == "n" and not tryagain == "N" and userinfo.Iron < number:
-                    tryagain = input("You don't have that much to sell. Try again?")
+                    tryagain = input("You don't have that much to sell. Try again? (Y/N)\n\nChoose option:\n> ")
                     if tryagain == "y" or tryagain == "Y":
                         sellmorefaster("Iron")
             if userinfo.Iron >= number:
@@ -66,7 +68,7 @@ def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice
             sellmorefaster("Diamond")
             if userinfo.Diamond < number:
                 while not tryagain == "n" and not tryagain == "N" and userinfo.Diamond < number:
-                    tryagain = input("You don't have that much to sell. Try again?")
+                    tryagain = input("You don't have that much to sell. Try again? (Y/N)\n\nChoose option:\n> ")
                     if tryagain == "y" or tryagain == "Y":
                         sellmorefaster("Diamond")
             if userinfo.Diamond >= number:
@@ -83,7 +85,7 @@ def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice
             sellmorefaster("Flux Capacitor")
             if userinfo.Flux_Capacitor < number:
                 while not tryagain == "n" and not tryagain == "N" and userinfo.Diamond < number:
-                    tryagain = input("You don't have that much to sell. Try again?")
+                    tryagain = input("You don't have that much to sell. Try again? (Y/N)\n\nChoose option:\n> ")
                     if tryagain == "y" or tryagain == "Y" and userinfo.Flux_Capacitor < number:
                         sellmorefaster("Flux Capacitor")
             if userinfo.Flux_Capacitor >= number:  
@@ -100,7 +102,7 @@ def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice
             sellmorefaster("Spongebob")
             if userinfo.Spongebob < number:
                 while not tryagain =="n" and not tryagain =="N" and userinfo.Spongebob:
-                    tryagain = input("You don't have that much to sell. Try again?")
+                    tryagain = input("You don't have that much to sell. Try again? (Y/N)\n\nChoose option:\n> ")
                     if tryagain == "y" or tryagain == "Y" and userinfo.Spongebob < number:
                         sellmorefaster("Spongebob")
             if userinfo.Spongebob >= number:

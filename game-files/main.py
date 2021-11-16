@@ -14,14 +14,15 @@ def Main_loop():
         
         os.system("clear")
         units = userinfo.units
+        print("               Player: " + story.user_name + '\n')
         print("               Planet: "+ ship.current_location_name)
         print("               Units: " + str(units))
         print("               Fuel: " + str(ship.current_fuel))
         print("               Age: "+ str(round(userinfo.age, 1)))
-        print("        What would you like to do?\n"
+        print("\n        What would you like to do?\n"
              + "T for Travel                M for Market\n"
              + "I for Inventory             Q for Quit Game\n"
-             + "Choice?  ", end = "")
+             + "\nChoose option:\n> ", end = "")
         answer = input() 
        
         if answer == "t" or answer == "T":
@@ -41,7 +42,7 @@ def Main_loop():
             userinfo.units += 1000000
         if userinfo.units >= 50000 and onetime == 0:
             onetime += 1
-            print("Placeholder You have won!")
+            print(story.user_name + ", You have won!")
             contend = input("Would you like to continue? (Y,n")
             if contend == "n":
                 answer = "q"
