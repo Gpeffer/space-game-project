@@ -191,7 +191,7 @@ def travel_ui():
                                 v = input('\nPress enter to continue to your destination.\n> ') 
                             u += 1
                         current_fuel = round(current_fuel)
-                        if current_fuel <= 0.0:
+                        if current_fuel < 0.0:
                             os.system("clear")
                             print('Oh no! You\'ve ran out of fuel while traveling among the stars.')
                             input('\nPress enter to continue.\n> ')
@@ -208,14 +208,35 @@ def travel_ui():
                                 print(num + '.', i)
                                 num = int(num)
                             choice = input('\nChoose option:\n> ')
-                            if choice == 1:
-                                print('placeholder')
-                            if choice == '2':
-                                print('BOOM')
-                                print('\nPress enter to continue.\n> ')
-                                destruct += 1
-                            if choice == 3:
-                                print('placeholder')
+                            loop = 0
+                            while loop == 0:
+                                if choice == '1':
+                                    os.system("clear")
+                                    randint = stdrandom.uniformInt(1,2)
+                                    input('Searching...\n\nPress enter to continue.\n> ')
+                                    os.system("clear")
+                                    if randint == 1:
+                                        print('Yes! You found just enough spare fuel you had stowed away for a rainy day.\nYou fuel up as quick as possible and continue to your destination.')
+                                        input('\nPress enter to arrive at your destination (make sure to get some fuel\n> ')
+                                        current_fuel = 0
+                                    if randint == 2:
+                                        print('Oh no! There\'s no spare fuel to be found. There Pirates make short work of you. You\'re dead.')
+                                        input('\nPress enter to continue.\n> ')
+                                        destruct += 1
+                                    if randint in locals():
+                                        del randint
+                                    loop += 1
+                                elif choice == '2':
+                                    os.system("clear")
+                                    print('BOOM')
+                                    input('\nPress enter to continue.\n> ')
+                                    destruct += 1
+                                    loop += 1
+                                elif choice == '3':
+                                    print('placeholder'
+                                    loop += 1
+                                else:
+                                    choice = input('\nInvalid input. Please try again.\n> ')
                         return current_fuel, current_location_name, destruct
                         l += 1
                     else:
