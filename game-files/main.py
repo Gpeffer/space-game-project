@@ -14,6 +14,10 @@ def Main_loop():
     while answer != "q" and answer != "Q":
         
         os.system("clear")
+        
+        if ship.destruct == 1:
+            break
+
         units = userinfo.units
         print("               Player: " + story.user_name + '\n')
         print("               Planet: "+ ship.current_location_name)
@@ -25,9 +29,6 @@ def Main_loop():
              + "I for Inventory             Q for Quit Game\n"
              + "\nChoose option:\n> ", end = "")
         answer = input() 
-       
-        if ship.destruct == 1:
-            answer = "q"
 
         if answer == "t" or answer == "T":
             os.system("clear")

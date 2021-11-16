@@ -101,7 +101,7 @@ def travel_ui():
     global available_areas_locations
     global available_areas_names
     global available_areas
-    destruct = int(0)
+    global destruct
     os.system("clear")
     k = 0
     global current_fuel
@@ -210,10 +210,10 @@ def travel_ui():
                             choice = input('\nChoose option:\n> ')
                             if choice == 1:
                                 print('placeholder')
-                            if choice == 2:
+                            if choice == '2':
                                 print('BOOM')
                                 print('\nPress enter to continue.\n> ')
-                                destruct = 1
+                                destruct += 1
                             if choice == 3:
                                 print('placeholder')
                         return current_fuel, current_location_name, destruct
