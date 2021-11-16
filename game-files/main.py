@@ -5,7 +5,7 @@ import os
 import market
 import story
 
-onetime =0
+onetime = 0
 
 def Main_loop():
     global onetime

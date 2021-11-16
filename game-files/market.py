@@ -15,30 +15,30 @@ def market(currentlocation):
            
             if bos == "B" or bos == "b":
                 os.system("clear")
-                Marketbuy.buytemp("Diamond",100, 250, 600)
+                Marketbuy.buytemp("Diamond")
            
             if bos == "S" or bos == "s":
                 os.system("clear")
-                Marketsell.template(100,250,600,1400,1200)
+                Marketsell.template()
 
         if currentlocation == "Alpha Aproxima":
            
             if bos == "B" or bos == "b":
                 os.system("clear")
-                Marketbuy.buytemp("Flux Capacitor",150, 300, 900)
+                Marketbuy.buytemp("Flux Capacitor")
            
             if bos == "S" or bos == "s":
                 os.system("clear")
-                Marketsell.template(150,250,900,800,1300)
+                Marketsell.template()
             
         if currentlocation == "Random Planet":
 
             if bos == "B" or bos == "b":
                 os.system("clear")
-                Marketbuy.buytemp("Spongebob", 200, 400, 800)
+                Marketbuy.buytemp()
             
             if bos == "S" or bos == "s":
                 os.system("clear")
-                Marketsell.template(200,400,1400,1600,800)
+                Marketsell.template()
         os.system("clear")
         stay = input("Would you like to stay in the market? (Y/N)\n\nChoose option:\n> ")

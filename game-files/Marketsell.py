@@ -1,8 +1,16 @@
 import userinfo
 import os
-
+import userinfo 
+import random
+import ship
+currentlocationif = "Earth"
 number = int(0)
 noitem = "You can't sell hopes and dreams!"
+coalprice = 100
+ironprice = 250 
+diamondprice = 600
+Flux_Capacitorprice = 1400
+Spongebobprice = 1200
 
 def sellmorefaster(item):
     global number
@@ -20,8 +28,22 @@ def sellmorefaster(item):
         number = int(number)
         return int(number)
 
-def template(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice):
+def template():
     tryagain = "Placeholder"
+    global currentlocationif
+    global coalprice
+    global ironprice
+    global diamondprice
+    global Flux_Capacitorprice
+    global Spongebobprice
+    
+    if currentlocationif != ship.current_location_name:
+        coalprice = int(random.uniform(0,500))
+        ironprice = int(random.uniform(0, 750))
+        diamondprice = int(random.uniform(0, 2600))
+        Flux_Capacitorprice = int(random.uniform(0, 2600))
+        Spongebobprice = int(random.uniform(0,2600))
+        currentlocationif = ship.current_location_name
     userinfo.inventorygetforsell(coalprice,ironprice,diamondprice,Flux_Capacitorprice,Spongebobprice)
     option = input("\nChoose option:\n> ")
 
