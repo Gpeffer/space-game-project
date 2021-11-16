@@ -7,6 +7,7 @@ Flux_Capacitor = 0
 Spongebob = 0
 
 def inventoryget():
+    print("   Iventory:\n")
     print("1. Coal: " + str(Coal))
     print("2. Iron: " + str(Iron))
     print("3. Diamond: "+ str(Diamond))

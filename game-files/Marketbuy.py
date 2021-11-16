@@ -46,7 +46,7 @@ def buytemp(UniqItem):
 
     if buy == "1":
         if userinfo.units < Marketsell.coalprice:
-            print("Credit doesn't exist in space!")
+            print("Credit doesn't exist in space.")
         if userinfo.units >= Marketsell.coalprice:
             if userinfo.units >= (Marketsell.coalprice* 2):
                 buymorethanone("Coal")
