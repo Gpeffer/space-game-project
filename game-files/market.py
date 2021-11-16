@@ -35,7 +35,7 @@ def market(currentlocation):
 
             if bos == "B" or bos == "b":
                 os.system("clear")
-                Marketbuy.buytemp()
+                Marketbuy.buytemp("Spongebob")
             
             if bos == "S" or bos == "s":
                 os.system("clear")
