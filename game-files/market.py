@@ -2,8 +2,6 @@ import userinfo
 import Marketbuy
 import Marketsell
 import os
-#buytemp(Uniqitem, coal price, ironprice, uniqitem price)
-#selltemp(coal price, iron price, diamond price, flux capacitor price, spongebob price)
 
 def market(currentlocation):
     stay = "y"
@@ -40,5 +38,4 @@ def market(currentlocation):
             if bos == "S" or bos == "s":
                 os.system("clear")
                 Marketsell.template()
-        os.system("clear")
         stay = input("Would you like to stay in the market? (Y/N)\n\nChoose option:\n> ")

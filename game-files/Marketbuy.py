@@ -45,6 +45,7 @@ def buytemp(UniqItem):
     buy = input("\nChoose option:\n> ")
 
     if buy == "1":
+        os.system("clear")
         if userinfo.units < Marketsell.coalprice:
             print("Credit doesn't exist in space.")
         if userinfo.units >= Marketsell.coalprice:
@@ -58,9 +59,11 @@ def buytemp(UniqItem):
             if userinfo.units >= (Marketsell.coalprice* number): 
                 userinfo.units -= (Marketsell.coalprice* number)
                 userinfo.Coal += number
+                os.system("clear")
                 print("You have purchased " + str(number) + " Coal for " + str(Marketsell.coalprice* number) )
 
     if buy == "2":
+        os.system("clear")
         if userinfo.units < Marketsell.ironprice:
             print("Credit doesn't exist in space.")
         if userinfo.units >= Marketsell.ironprice:
@@ -74,10 +77,12 @@ def buytemp(UniqItem):
             if userinfo.units >= (Marketsell.ironprice* number):    
                 userinfo.units -= int(Marketsell.ironprice* number)
                 userinfo.Iron += number
+                os.system("clear")
                 print("You have purchased " + str(number) + " Iron for " + str(Marketsell.ironprice* number))
 
 
     if buy == "3":
+        os.system("clear")
         if (userinfo.units - UniqItemPrice) < 0:
             print("Credit doesn't exist in space.")
         if userinfo.units > UniqItemPrice:
@@ -95,6 +100,7 @@ def buytemp(UniqItem):
                 userinfo.Flux_Capacitor += number
             if UniqItem == "Spongebob":
                 userinfo.Spongebob += number
+            os.system("clear")
             print("You have purchased " + str(number) +" "+ UniqItem + " for " + str(UniqItemPrice * number))
 
     if buy == "4":
@@ -103,16 +109,19 @@ def buytemp(UniqItem):
 
         if not quantityfuel.isdigit():
             while not quantityfuel.isdigit():
+                os.system("clear")
                 print("Invalid input detected. Please input a integer")
                 quantityfuel=input("How much fuel would you like to purchase?\n\nChoose quantity:\n> ")
 
         quantityfuel = int(quantityfuel)
         if (userinfo.units - quantityfuel) <= 0:
+            os.system("clear")
             print("Credit doesn't exist in space.")
 
         if (userinfo.units - quantityfuel) >= 0:
             ship.current_fuel += quantityfuel
             userinfo.units -= quantityfuel
+            print("You have purchased " + str(quantityfuel) +"gallons of fuel for " + str(quantityfuel))
 
             if ship.current_fuel > 1000 and onetimeprint == 0:
                 onetimeprint += 1
