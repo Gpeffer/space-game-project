@@ -233,7 +233,7 @@ def travel_ui():
                                     destruct += 1
                                     loop += 1
                                 elif choice == '3':
-                                    print('placeholder'
+                                    print('placeholder')
                                     loop += 1
                                 else:
                                     choice = input('\nInvalid input. Please try again.\n> ')
