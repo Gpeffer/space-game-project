@@ -51,20 +51,22 @@ def warp_speed():
     while a == ():
         print('\nPlease calculate how fast you would like to travel')
         W = input('\nInput integer 1-8 (higher number = faster travel and fuel consumed at higher rate)\n> ')
-        W = int(W)
-        if W <= 8 and W >= 1:
-            W = float(W)
-            a = float(10) / float(3)
-            a = W**a
-            b = float(-11) / float(3)
-            c = float(10) - W
-            b = c**b
-            a += b
-            a = round(a)
-            s = a
-            return s
+        if W == '1' or W == '2' or W == '3' or W == '4' or W == '5' or W == '6' or W == '7' or W == '8':
+            W = int(W)
+            if W <= 8 and W >= 1:
+                W = float(W)
+                a = float(10) / float(3)
+                a = W**a
+                b = float(-11) / float(3)
+                c = float(10) - W
+                b = c**b
+                a += b
+                a = round(a)
+                s = a
+                return s
         else:
-            print('\nInvalid input\n')
+            os.system("clear")
+            print('\nInvalid input')
 
 def distance_convert(distance):
     distance = float(distance)
@@ -94,6 +96,7 @@ def fuel(speed, distance):
     return f
 
 def travel_ui():
+    global units
     global earthitems
     global current_location
     global distance
@@ -215,11 +218,11 @@ def travel_ui():
                                     randint = stdrandom.uniformInt(1,2)
                                     input('Searching...\n\nPress enter to continue.\n> ')
                                     os.system("clear")
-                                    if randint == 1:
+                                    if randint == '1':
                                         print('Yes! You found just enough spare fuel you had stowed away for a rainy day.\nYou fuel up as quick as possible and continue to your destination.')
-                                        input('\nPress enter to arrive at your destination (make sure to get some fuel\n> ')
+                                        input('\nPress enter to arrive at your destination (make sure to get some fuel)\n> ')
                                         current_fuel = 0
-                                    if randint == 2:
+                                    else:
                                         print('Oh no! There\'s no spare fuel to be found. There Pirates make short work of you. You\'re dead.')
                                         input('\nPress enter to continue.\n> ')
                                         destruct += 1
@@ -233,11 +236,26 @@ def travel_ui():
                                     destruct += 1
                                     loop += 1
                                 elif choice == '3':
-                                    print('placeholder')
+                                    os.system("clear")
+                                    print('You try pay the Pirates 1000 units to leave you alone...')
+                                    input('\nPress enter to continue.\n> ')
+                                    os.system("clear")
+                                    randunit = userinfo.units - 1000
+                                    if randunit < 0:
+                                        print('You don\'t have enough units to pay the pirates. You\'re dead.')
+                                        input('\nPress enter to continue.\n> ')
+                                        destruct += 1
+                                    else:
+                                        print('You pay the pirates off successfully,\nand manage to extract enough fuel from nearby asteroids to complete your journey.')
+                                        input('\nPress enter to continue to your destination.\n> ')
+                                        userinfo.units -= 1000
+                                        current_fuel = 0
+                                    if randunit in locals():
+                                        del randunit
                                     loop += 1
                                 else:
                                     choice = input('\nInvalid input. Please try again.\n> ')
-                        return current_fuel, current_location_name, destruct
+                        return current_fuel, current_location_name, destruct, userinfo.units
                         l += 1
                     else:
                         l = 1
@@ -298,6 +316,67 @@ def travel_ui():
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             u += 1
                         current_fuel = round(current_fuel)
+                        if current_fuel < 0.0:
+                            os.system("clear")
+                            print('Oh no! You\'ve ran out of fuel while traveling among the stars.')
+                            input('\nPress enter to continue.\n> ')
+                            os.system("clear")
+                            print('The Galaxy is a dangerous place to be floating around aimlessly.\nYou\'ve become a target.')
+                            input('\nPress enter to continue.\n> ')
+                            os.system("clear")
+                            print('Some space Pirates spot you from their vessel and take interest.\nYou had better act quick. What will you do?\n')
+                            pirates = ['Try to find extra fuel stored on ship (Take chance to find enough fuel to complete journey)', 'Hit self-destruct button (Don\'t give them the pleasure)', 'Try to bribe the Pirates 1000 units to leave you alone']
+                            num = 0
+                            for i in pirates:
+                                num += 1
+                                num = str(num)
+                                print(num + '.', i)
+                                num = int(num)
+                            choice = input('\nChoose option:\n> ')
+                            loop = 0
+                            while loop == 0:
+                                if choice == '1':
+                                    os.system("clear")
+                                    randint = stdrandom.uniformInt(1,2)
+                                    input('Searching...\n\nPress enter to continue.\n> ')
+                                    os.system("clear")
+                                    if randint == '1':
+                                        print('Yes! You found just enough spare fuel you had stowed away for a rainy day.\nYou fuel up as quick as possible and continue to your destination.')
+                                        input('\nPress enter to arrive at your destination (make sure to get some fuel)\n> ')
+                                        current_fuel = 0
+                                    else:
+                                        print('Oh no! There\'s no spare fuel to be found. There Pirates make short work of you. You\'re dead.')
+                                        input('\nPress enter to continue.\n> ')
+                                        destruct += 1
+                                    if randint in locals():
+                                        del randint
+                                    loop += 1
+                                elif choice == '2':
+                                    os.system("clear")
+                                    print('BOOM')
+                                    input('\nPress enter to continue.\n> ')
+                                    destruct += 1
+                                    loop += 1
+                                elif choice == '3':
+                                    os.system("clear")
+                                    print('You try pay the Pirates 1000 units to leave you alone...')
+                                    input('\nPress enter to continue.\n> ')
+                                    os.system("clear")
+                                    randunit = userinfo.units - 1000
+                                    if randunit < 0:
+                                        print('You don\'t have enough units to pay the pirates. You\'re dead.')
+                                        input('\nPress enter to continue.\n> ')
+                                        destruct += 1
+                                    else:
+                                        print('You pay the pirates off successfully,\nand manage to extract enough fuel from nearby asteroids to complete your journey.')
+                                        input('\nPress enter to continue to your destination.\n> ')
+                                        userinfo.units -= 1000
+                                        current_fuel = 0
+                                    if randunit in locals():
+                                        del randunit
+                                    loop += 1
+                                else:
+                                    choice = input('\nInvalid input. Please try again.\n> ')
                         return current_fuel, current_location_name
                         l += 1
                     else:
