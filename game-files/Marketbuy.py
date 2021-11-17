@@ -105,7 +105,8 @@ def buytemp(UniqItem):
 
     if buy == "4":
         os.system("clear")
-        quantityfuel=input("How much fuel would you like to purchase?\n\nChoose quantity:\n> ")
+        print('Current fuel:', ship.current_fuel)
+        quantityfuel=input("\nHow much fuel would you like to purchase?\n\nChoose quantity:\n> ")
 
         if not quantityfuel.isdigit():
             while not quantityfuel.isdigit():
