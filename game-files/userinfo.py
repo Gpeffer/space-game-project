@@ -8,11 +8,11 @@ Spongebob = 0
 
 def inventoryget():
     print("   Iventory:\n")
-    print("1. Coal: " + str(Coal))
-    print("2. Iron: " + str(Iron))
-    print("3. Diamond: "+ str(Diamond))
-    print("4. Flux Capacitor: "+ str(Flux_Capacitor))
-    return "5. Spongebob: " + str(Spongebob)
+    print("Coal: " + str(Coal))
+    print("Iron: " + str(Iron))
+    print("Diamond: "+ str(Diamond))
+    print("Flux Capacitor: "+ str(Flux_Capacitor))
+    return "Spongebob: " + str(Spongebob)
 
 def inventorygetforsell(Coalp, Ironp, Diamondp, Flux_Capacitorp, Spongebobp):
     print("1. Coal: " + str(Coal) + " for " + str(Coalp) + " a piece")
