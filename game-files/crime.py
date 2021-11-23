@@ -9,11 +9,12 @@ def theftfail(msp, item):
         os.system("clear")
         deathawaits = False
 
-        print("You have failed to acquire "+item+".") 
+        print("You have failed to acquire "+item+".\n") 
 
         if  userinfo.player.units < msp:
-            print("You don't have enough money.\n"
+            print("You don't have enough money to pay for your crime.\n"
                 + "Your existence has been terminated.")
+            input("\nPress enter to continue.\n> ")
             caught = 1
             deathawaits = True
 
@@ -33,8 +34,8 @@ def pickpocket():
     randomperson.Spongebob = random.randint(0,1)
 
     answer = input("WARNING: Unsuccesfull theft will result in charge of current price.\n"
-                +  " Inability to pay will result in death.\n"
-                +  "Are you sure you want to steal? (Y/N)")
+                +  "Inability to pay will result in death.\n"
+                +  "\nAre you sure you want to steal? (Y/N)\n> ")
 
     if answer == "Y" or answer == "y":
         os.system("clear")
@@ -50,7 +51,7 @@ def pickpocket():
             + "\n3. Diamond: " + str(randomperson.Diamond)
             + "\n4. Flux Capacitor: " + str(randomperson.Flux_Capacitor)
             + "\n5. Spongebob: " + str(randomperson.Spongebob)
-            + "\nItem Number to steal or E to exit.")
+            + "\n\nItem Number to steal or E to exit.\n> ")
             
             if itempick == "1":
                 if randomperson.Coal == 0:
@@ -60,7 +61,7 @@ def pickpocket():
                     os.system("clear")
                     print("You have tactically acquired Coal.")
                     randomperson.Coal -= 1
-                    input("Press Enter to Continue.")
+                    input("\nPress Enter to Continue.\n> ")
                 elif chance == 0:
                     theftfail(Marketsell.coalprice,"Coal")
                     if deathawaits:
@@ -74,7 +75,7 @@ def pickpocket():
                     os.system("clear")
                     print("You have tactically acquired Iron.")
                     randomperson.Iron -= 1             
-                    input("Press Enter to Continue.")
+                    input("\nPress Enter to Continue.\n> ")
                 elif chance == 0:
                     theftfail(Marketsell.ironprice, "Iron")
                     if deathawaits:
@@ -88,7 +89,7 @@ def pickpocket():
                     os.system("clear")
                     print("You have tactically acquired Diamond.")
                     randomperson.Diamond -= 1
-                    input("Press Enter to Continue.")
+                    input("\nPress Enter to Continue.\n> ")
                 elif chance == 0:
                     theftfail(Marketsell.diamondprice, "Diamond" )
                     if deathawaits:
@@ -102,7 +103,7 @@ def pickpocket():
                     os.system("clear")
                     print("You have tactically acquired a Flux Capacitor")
                     randomperson.Flux_Capacitor -= 1
-                    input("Press Enter to Continue.")
+                    input("\nPress Enter to Continue.\n> ")
                 elif chance == 0:
                     theftfail(Marketsell.Flux_Capacitorprice, "Flux Capacitor")
                     if deathawaits:
@@ -116,7 +117,7 @@ def pickpocket():
                     os.system("clear")
                     print("You have tactically acquired Spongebob")
                     randomperson.Spongebob -= 1
-                    input("Press Enter to Continue.")
+                    input("\nPress Enter to Continue.\n> ")
                 elif chance == 0:
                     theftfail(Marketsell.Spongebobprice, "Spongebob")
                     if deathawaits:
@@ -126,7 +127,7 @@ def pickpocket():
                 break
 
             else: 
-                itempick = input("Invalid Input, Try again or E for exit.")
+                itempick = input("Invalid Input, Try again or E for exit.\n> ")
                 if itempick == "E" or itempick == "e":
                     break
 
