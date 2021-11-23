@@ -10,6 +10,7 @@ class user:
         self.Flux_Capacitor = 0
         self.Spongebob = 0
         self.invcap = 5
+        self.maxfuel = 100
     def sumofinv(self):
         return self.Diamond + self.Flux_Capacitor + self.Spongebob + self.Coal + self.Iron
 player = user(user_name)

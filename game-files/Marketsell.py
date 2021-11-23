@@ -35,6 +35,7 @@ def template():
     global diamondprice
     global Flux_Capacitorprice
     global Spongebobprice
+    global number
     
     if currentlocationif != ship.current_location_name:
         coalprice = int(random.uniform(0,500))
@@ -140,7 +141,7 @@ def template():
                 userinfo.player.units += (Spongebobprice * number)
                 os.system("clear")
                 print("You have sold " + str(number) + " Spongebob for " + str(Spongebobprice * number) + ".")
-
+    number = 1
 def earthsell(): 
     template(100,250,600,1400,1200)
 

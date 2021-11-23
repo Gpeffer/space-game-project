@@ -5,7 +5,7 @@ import planets
 import os
 import market
 import crime
-
+import stats
 
 onetime = 0
 
@@ -17,10 +17,22 @@ def Main_loop():
     while answer != "q" and answer != "Q":
         
         os.system("clear")
+
+        if userinfo.player.units >= 50000 and onetime == 0:
+            onetime += 1
+            print(userinfo.player.name + ", You have won!")
+            contend = input("Would you like to continue? (Y,n")
+            if contend == "n":
+                answer = "q"
+
         if ship.destruct == 1:
             break
         if crime.caught == 1:
             break
+        
+        if userinfo.player.age >= 62:
+            print("Placeholder")
+            answer = "q"
         
         print("                            Player: " + userinfo.player.name + '\n')
         print("                            Planet: "+ ship.current_location_name)
@@ -45,19 +57,24 @@ def Main_loop():
             os.system("clear")
             print(userinfo.inventoryget())
             input("\nPress Enter to exit.\n> ")
-        elif answer == "c":
-            crime.pickpocket()
+        elif answer == "c" or answer == "C":
+            if userinfo.player.sumofinv() >= userinfo.player.invcap:
+                print("Your inventory is full, Sell Items and then return.")
+            else:
+                crime.pickpocket()
+        elif answer == "s" or answer == "S":
+            stats.Stats()
         elif answer == "small loan of a million units":
             userinfo.player.units += 1000000
-        elif userinfo.player.units >= 50000 and onetime == 0:
+
+        if userinfo.player.units >= 50000 and onetime == 0:
             onetime += 1
             print(userinfo.player.name + ", You have won!")
             contend = input("Would you like to continue? (Y,n")
             if contend == "n":
                 answer = "q"
-        elif userinfo.player.age >= 62:
-            print("Placeholder")
-            answer = "q"
+
+
 
 
 Main_loop()

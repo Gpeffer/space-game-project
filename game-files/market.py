@@ -8,7 +8,12 @@ def market(currentlocation):
     while stay == "y" or stay == "Y":
         os.system("clear")
         bos = input("Would you like to (B)uy or (S)ell?\n\nChoose option:\n> ")
-
+        
+        if userinfo.player.sumofinv() >= userinfo.player.invcap:
+            if bos == "B" or bos == "b":
+                input("Inventory Full, Access Denied.")
+                break
+            
         if currentlocation == "Earth":
            
             if bos == "B" or bos == "b":
@@ -19,7 +24,7 @@ def market(currentlocation):
                 os.system("clear")
                 Marketsell.template()
 
-        if currentlocation == "Alpha Aproxima":
+        elif currentlocation == "Alpha Aproxima":
            
             if bos == "B" or bos == "b":
                 os.system("clear")
@@ -29,7 +34,7 @@ def market(currentlocation):
                 os.system("clear")
                 Marketsell.template()
             
-        if currentlocation == "Random Planet":
+        elif currentlocation == "Random Planet":
 
             if bos == "B" or bos == "b":
                 os.system("clear")
