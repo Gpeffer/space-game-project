@@ -155,7 +155,7 @@ def travel_ui():
                         fuel_used = float(fuel_used)
                         destination = available_areas_names[0]
                         current_fuel -= fuel_used
-                        userinfo.age += time_used
+                        userinfo.player.age += time_used
                         current_location_name = destination
                         current_location = available_areas_locations[0]
                         available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
@@ -170,27 +170,27 @@ def travel_ui():
                             if v == 1:
                                 print('\nCongratulations! You found a meteorite containing Coal!')
                                 print('\nItem will automatically be added to your inventory.')
-                                userinfo.Coal += 1
+                                userinfo.player.Coal += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             elif v == 2:
                                 print('\nCongratulations! You found a meteorite containing Iron!')
                                 print('\nItem will automatically be added to your inventory.')
-                                userinfo.Iron += 1
+                                userinfo.player.Iron += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             elif v == 3:
                                 print('\nCongratulations! You found a meteorite containing Diamonds!')
                                 print('\nItem will automatically be added to your inventory.')
-                                userinfo.Diamond += 1
+                                userinfo.player.Diamond += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             elif v == 4:
                                 print('\nCongratulations! You found a meteorite containing a Flux Capacitor!')
                                 print('\nItem will automatically be added to your inventory.')
-                                userinfo.Flux_Capacitor += 1
+                                userinfo.player.Flux_Capacitor += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             elif v == 5:
                                 print('\nCongratulations! You found a meteorite containing SPONGEBOB!')
                                 print('\nItem will automatically be added to your inventory.')
-                                userinfo.Spongebob += 1
+                                userinfo.player.Spongebob += 1
                                 v = input('\nPress enter to continue to your destination.\n> ') 
                             u += 1
                         current_fuel = round(current_fuel)
@@ -240,7 +240,7 @@ def travel_ui():
                                     print('You try pay the Pirates 1000 units to leave you alone...')
                                     input('\nPress enter to continue.\n> ')
                                     os.system("clear")
-                                    randunit = userinfo.units - 1000
+                                    randunit = userinfo.player.units - 1000
                                     if randunit < 0:
                                         print('You don\'t have enough units to pay the pirates. You\'re dead.')
                                         input('\nPress enter to continue.\n> ')
@@ -248,14 +248,14 @@ def travel_ui():
                                     else:
                                         print('You pay the pirates off successfully,\nand manage to extract enough fuel from nearby asteroids to complete your journey.')
                                         input('\nPress enter to continue to your destination.\n> ')
-                                        userinfo.units -= 1000
+                                        userinfo.player.units -= 1000
                                         current_fuel = 0
                                     if randunit in locals():
                                         del randunit
                                     loop += 1
                                 else:
                                     choice = input('\nInvalid input. Please try again.\n> ')
-                        return current_fuel, current_location_name, destruct, userinfo.units
+                        return current_fuel, current_location_name, destruct, userinfo.player.units
                         l += 1
                     else:
                         l = 1
@@ -277,7 +277,7 @@ def travel_ui():
                         fuel_used = float(fuel_used)
                         destination = available_areas_names[1]
                         current_fuel -= fuel_used
-                        userinfo.age += time_used
+                        userinfo.player.age += time_used
                         current_location_name = destination
                         current_location = available_areas_locations[1]
                         available_areas_names = ["Earth", "Alpha Aproxima", "Random Planet"]
@@ -292,27 +292,27 @@ def travel_ui():
                             if v == 1:
                                 print('\nCongratulations! You found a meteorite containing Coal!')
                                 print('\nItem will automatically be added to your inventory.')
-                                userinfo.Coal += 1
+                                userinfo.player.Coal += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             elif v == 2:
                                 print('\nCongratulations! You found a meteorite containing Iron!')
                                 print('\nItem will automatically be added to your inventory.')
-                                userinfo.Iron += 1
+                                userinfo.player.Iron += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             elif v == 3:
                                 print('\nCongratulations! You found a meteorite containing Diamonds!')
                                 print('\nItem will automatically be added to your inventory.')
-                                userinfo.Diamond += 1
+                                userinfo.player.Diamond += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             elif v == 4:
                                 print('\nCongratulations! You found a meteorite containing a Flux Capacitor!')
                                 print('\nItem will automatically be added to your inventory.')
-                                userinfo.Flux_Capacitor += 1
+                                userinfo.player.Flux_Capacitor += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             elif v == 5:
                                 print('\nCongratulations! You found a meteorite containing SPONGEBOB!')
                                 print('\nItem will automatically be added to your inventory.')
-                                userinfo.Spongebob += 1
+                                userinfo.player.Spongebob += 1
                                 v = input('\nPress enter to continue to your destination.\n> ')
                             u += 1
                         current_fuel = round(current_fuel)
@@ -362,7 +362,7 @@ def travel_ui():
                                     print('You try pay the Pirates 1000 units to leave you alone...')
                                     input('\nPress enter to continue.\n> ')
                                     os.system("clear")
-                                    randunit = userinfo.units - 1000
+                                    randunit = userinfo.player.units - 1000
                                     if randunit < 0:
                                         print('You don\'t have enough units to pay the pirates. You\'re dead.')
                                         input('\nPress enter to continue.\n> ')
@@ -370,7 +370,7 @@ def travel_ui():
                                     else:
                                         print('You pay the pirates off successfully,\nand manage to extract enough fuel from nearby asteroids to complete your journey.')
                                         input('\nPress enter to continue to your destination.\n> ')
-                                        userinfo.units -= 1000
+                                        userinfo.player.units -= 1000
                                         current_fuel = 0
                                     if randunit in locals():
                                         del randunit

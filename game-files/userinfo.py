@@ -1,23 +1,30 @@
-units = 1000 
-age = 18.0
-Coal = 0
-Iron = 0
-Diamond = 0 
-Flux_Capacitor = 0
-Spongebob = 0
-
+from story import user_name
+class user:
+    def __init__ (self,Name):
+        self.name= Name
+        self.units = 1000 
+        self.age = 18.0
+        self.Coal = 0
+        self.Iron = 0
+        self.Diamond = 0 
+        self.Flux_Capacitor = 0
+        self.Spongebob = 0
+        self.invcap = 5
+    def sumofinv(self):
+        return self.Diamond + self.Flux_Capacitor + self.Spongebob + self.Coal + self.Iron
+player = user(user_name)
 def inventoryget():
     print("   Iventory:\n")
-    print("Coal: " + str(Coal))
-    print("Iron: " + str(Iron))
-    print("Diamond: "+ str(Diamond))
-    print("Flux Capacitor: "+ str(Flux_Capacitor))
-    return "Spongebob: " + str(Spongebob)
+    print("Coal: " + str(player.Coal))
+    print("Iron: " + str(player.Iron))
+    print("Diamond: "+ str(player.Diamond))
+    print("Flux Capacitor: "+ str(player.Flux_Capacitor))
+    return "Spongebob: " + str(player.Spongebob)
 
 def inventorygetforsell(Coalp, Ironp, Diamondp, Flux_Capacitorp, Spongebobp):
-    print("1. Coal: " + str(Coal) + " for " + str(Coalp) + " a piece")
-    print("2. Iron: " + str(Iron)+ " for " + str(Ironp) + " a piece")
-    print("3. Diamond: "+ str(Diamond) + " for " +str(Diamondp) + " a piece")
-    print("4. Flux Capacitor: "+ str(Flux_Capacitor)+ " for " + str(Flux_Capacitorp) + " a piece")
-    print("5. Spongebob: "+ str(Spongebob)+ " for " + str(Spongebobp) + " a piece")
+    print("1. Coal: " + str(player.Coal) + " for " + str(Coalp) + " a piece")
+    print("2. Iron: " + str(player.Iron)+ " for " + str(Ironp) + " a piece")
+    print("3. Diamond: "+ str(player.Diamond) + " for " +str(Diamondp) + " a piece")
+    print("4. Flux Capacitor: "+ str(player.Flux_Capacitor)+ " for " + str(Flux_Capacitorp) + " a piece")
+    print("5. Spongebob: "+ str(player.Spongebob)+ " for " + str(Spongebobp) + " a piece")
 

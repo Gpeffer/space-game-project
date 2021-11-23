@@ -1,6 +1,5 @@
 import userinfo
 import os
-import userinfo 
 import random
 import ship
 currentlocationif = "Earth"
@@ -48,97 +47,97 @@ def template():
     option = input("\nChoose option:\n> ")
 
     if option == "1":
-        if userinfo.Coal == 0:
+        if userinfo.player.Coal == 0:
             print(noitem)
 
-        if userinfo.Coal > 0:
-            if userinfo.Coal > 1:
+        if userinfo.player.Coal > 0:
+            if userinfo.player.Coal > 1:
                 sellmorefaster("Coal")
-                if userinfo.Coal < number:
-                    while not tryagain == "n" and not tryagain == "N" and userinfo.Coal < number:
+                if userinfo.player.Coal < number:
+                    while not tryagain == "n" and not tryagain == "N" and userinfo.player.Coal < number:
                         tryagain = input("You don't have that much to sell. Try again? (Y/N)\n\nChoose option:\n> ")
                         if tryagain == "y" or tryagain =="Y":
                             sellmorefaster("Coal")
-            if userinfo.Coal >= number:
-                userinfo.Coal -= number
-                userinfo.units += (coalprice * number)
+            if userinfo.player.Coal >= number:
+                userinfo.player.Coal -= number
+                userinfo.player.units += (coalprice * number)
                 os.system("clear")
                 print("You have sold " + str(number) + " Coal for " + str(coalprice * number) + ".")
 
     if option == "2":
 
-        if userinfo.Iron == 0:
+        if userinfo.player.Iron == 0:
             print(noitem)
 
-        if userinfo.Iron > 0:
-            if userinfo.Iron > 1:
+        if userinfo.player.Iron > 0:
+            if userinfo.player.Iron > 1:
                 sellmorefaster("Iron")
-                if userinfo.Iron < number:
-                    while not tryagain == "n" and not tryagain == "N" and userinfo.Iron < number:
+                if userinfo.player.Iron < number:
+                    while not tryagain == "n" and not tryagain == "N" and userinfo.player.Iron < number:
                         tryagain = input("You don't have that much to sell. Try again? (Y/N)\n\nChoose option:\n> ")
                         if tryagain == "y" or tryagain == "Y":
                             sellmorefaster("Iron")
-            if userinfo.Iron >= number:
-                userinfo.Iron -= number
-                userinfo.units += (ironprice * number)
+            if userinfo.player.Iron >= number:
+                userinfo.player.Iron -= number
+                userinfo.player.units += (ironprice * number)
                 os.system("clear")
                 print("You have sold " + str(number) + " iron for " + str(ironprice * number) + ".")
 
 
     if option == "3":
 
-        if userinfo.Diamond == 0:
+        if userinfo.player.Diamond == 0:
             print(noitem)
 
-        if userinfo.Diamond > 0:
-            if userinfo.Diamond > 1:
+        if userinfo.player.Diamond > 0:
+            if userinfo.player.Diamond > 1:
                 sellmorefaster("Diamond")
-                if userinfo.Diamond < number:
-                    while not tryagain == "n" and not tryagain == "N" and userinfo.Diamond < number:
+                if userinfo.player.Diamond < number:
+                    while not tryagain == "n" and not tryagain == "N" and userinfo.player.Diamond < number:
                         tryagain = input("You don't have that much to sell. Try again? (Y/N)\n\nChoose option:\n> ")
                         if tryagain == "y" or tryagain == "Y":
                             sellmorefaster("Diamond")
-            if userinfo.Diamond >= number:
-                userinfo.Diamond -= number
-                userinfo.units += (diamondprice * number)
+            if userinfo.player.Diamond >= number:
+                userinfo.player.Diamond -= number
+                userinfo.player.units += (diamondprice * number)
                 os.system("clear")
                 print("You have sold " + str(number) + " diamond for " + str(diamondprice * number) + ".")
 
     if option == "4":
 
-        if userinfo.Flux_Capacitor == 0:
+        if userinfo.player.Flux_Capacitor == 0:
             print(noitem)
 
-        if userinfo.Flux_Capacitor > 0:
-            if userinfo.Flux_Capacitor > 1:
+        if userinfo.player.Flux_Capacitor > 0:
+            if userinfo.player.Flux_Capacitor > 1:
                 sellmorefaster("Flux Capacitor")
-                if userinfo.Flux_Capacitor < number:
-                    while not tryagain == "n" and not tryagain == "N" and userinfo.Diamond < number:
+                if userinfo.player.Flux_Capacitor < number:
+                    while not tryagain == "n" and not tryagain == "N" and userinfo.player.Diamond < number:
                         tryagain = input("You don't have that much to sell. Try again? (Y/N)\n\nChoose option:\n> ")
-                        if tryagain == "y" or tryagain == "Y" and userinfo.Flux_Capacitor < number:
+                        if tryagain == "y" or tryagain == "Y" and userinfo.player.Flux_Capacitor < number:
                             sellmorefaster("Flux Capacitor")
-            if userinfo.Flux_Capacitor >= number:  
-                userinfo.Flux_Capacitor -= number
-                userinfo.units += (Flux_Capacitorprice * number)
+            if userinfo.player.Flux_Capacitor >= number:  
+                userinfo.player.Flux_Capacitor -= number
+                userinfo.player.units += (Flux_Capacitorprice * number)
                 os.system("clear")
                 print("You have sold " + str(number) + " Flux Capacitor for " + str(Flux_Capacitorprice * number) + ".")
 
     if option == "5":
 
-        if userinfo.Spongebob == 0:
+        if userinfo.player.Spongebob == 0:
             print(noitem)
 
-        if userinfo.Spongebob > 0:
-            if userinfo.Spongebob > 1:
+        if userinfo.player.Spongebob > 0:
+            if userinfo.player.Spongebob > 1:
                 sellmorefaster("Spongebob")
-                if userinfo.Spongebob < number:
-                    while not tryagain =="n" and not tryagain =="N" and userinfo.Spongebob:
+                if userinfo.player.Spongebob < number:
+                    while not tryagain =="n" and not tryagain =="N" and userinfo.player.Spongebob:
                         tryagain = input("You don't have that much to sell. Try again? (Y/N)\n\nChoose option:\n> ")
-                        if tryagain == "y" or tryagain == "Y" and userinfo.Spongebob < number:
+                        if tryagain == "y" or tryagain == "Y" and userinfo.player.Spongebob < number:
                             sellmorefaster("Spongebob")
-            if userinfo.Spongebob >= number:
-                userinfo.Spongebob -= number
-                userinfo.units += (Spongebobprice * number)
+            if userinfo.player.Spongebob >= number:
+                userinfo.player.Spongebob -= number
+                userinfo.player.units += (Spongebobprice * number)
                 os.system("clear")
                 print("You have sold " + str(number) + " Spongebob for " + str(Spongebobprice * number) + ".")
 

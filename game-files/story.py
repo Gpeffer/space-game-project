@@ -26,8 +26,9 @@ if a == 'p' or a == 'P':
     print('Do you remember who you are.?')
     time.sleep(1)
     user_name = input('\nEnter your name\n> ')
-    os.system("clear")
 
+    os.system("clear")
+    
     print('I\'m glad to hear it, ' + user_name + '.')
     time.sleep(1)
     print('\nNot everybody was so lucky.\n')
@@ -122,6 +123,7 @@ else:
     os.system("clear")
     user_name = input('Enter your name\n> ')
 os.system("clear")
+
 start_of_game_items = ['100 gal of fuel', '1000 units (currency)', 'A desire to make money exploring the galaxy']
 print('Game details:\n')
 time.sleep(1)
