@@ -2,8 +2,8 @@ import userinfo
 import os
 
 def Stats():
-    os.system("clear")
     while True: 
+        os.system("clear")
         upgexit= input("1. Inventory Cap: " + str(userinfo.player.invcap) + " (Increase by 5 for 100)"
                 +  "\n2. Max Fuel Cap: " + str(userinfo.player.maxfuel) + " (Increase by 50 for 100)"
                 +  "\n Number of item to Upgrade or Enter to Exit\n"
