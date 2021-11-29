@@ -146,8 +146,8 @@ def buytemp(UniqItem):
             print("Credit doesn't exist in space.")
         
         if (userinfo.player.units - number) >= 0:
-            ship.current_fuel += quantityfuel
-            userinfo.player.units -= quantityfuel
+            ship.current_fuel += number
+            userinfo.player.units -= number 
             print("You have purchased " + str(quantityfuel) +"gallons of fuel for " + str(quantityfuel))
 
 
