@@ -148,6 +148,6 @@ def buytemp(UniqItem):
         if (userinfo.player.units - number) >= 0:
             ship.current_fuel += number
             userinfo.player.units -= number 
-            print("You have purchased " + str(quantityfuel) +"gallons of fuel for " + str(quantityfuel))
+            print("You have purchased " + str(number) +" gallons of fuel for " + str(number))
 
 
