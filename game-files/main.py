@@ -17,7 +17,7 @@ def Main_loop():
     while answer != "q" and answer != "Q":
         
         os.system("clear")
-
+        userinfo.player.age = round(userinfo.player.age, 1)
         if userinfo.player.units >= 50000 and onetime == 0:
             onetime += 1
             print(userinfo.player.name + ", You have won!")

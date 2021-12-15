@@ -155,6 +155,7 @@ def travel_ui():
                         fuel_used = float(fuel_used)
                         destination = available_areas_names[0]
                         current_fuel -= fuel_used
+                        time_used = round(time_used, 1)
                         userinfo.player.age += time_used
                         current_location_name = destination
                         current_location = available_areas_locations[0]
@@ -277,6 +278,7 @@ def travel_ui():
                         fuel_used = float(fuel_used)
                         destination = available_areas_names[1]
                         current_fuel -= fuel_used
+                        time_used = round(time_used, 1)
                         userinfo.player.age += time_used
                         current_location_name = destination
                         current_location = available_areas_locations[1]
