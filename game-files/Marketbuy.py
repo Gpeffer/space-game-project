@@ -39,7 +39,8 @@ def buytemp(UniqItem):
     if curloc == "Random Planet":
         UniqItemPrice = Marketsell.Spongebobprice
     tryagain = "Placeholder"
-    print("Available items:\n\n"
+    print("Current Units: " + str(userinfo.player.units) + "\n\n"
+        +"Available items:\n"
         +"1. Coal "+ " for " + str(Marketsell.coalprice) + "\n"
         + "2. Iron" + " for " + str(Marketsell.ironprice) +"\n"
         + "3. " + UniqItem + " for " + str(UniqItemPrice) + "\n"
