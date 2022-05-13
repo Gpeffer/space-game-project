@@ -17,3 +17,5 @@ def random_location():
 earth_location = [float(0.0), float(0.0)]
 alpha_location = [float(0), float(-4.246)]
 random_planet_location = random_location()
+
+a
